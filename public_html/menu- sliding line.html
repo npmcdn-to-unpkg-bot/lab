@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/libs/jquery/jquery.js"></script>
+        <link href="css/style.css" rel="stylesheet" />        
+        <script type="text/javascript" src="js/libs/gsap/TweenMax.min.js"></script>
+	<script type="text/javascript" src="js/libs/gsap/TweenLite.min.js"></script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <div class="nav-wrap">
+            <ul class="group" id="example-one">
+                
+               <li class="current_page_item"><a href="#">Home</a></li>
+               <!--<li id='magic-line'></li>-->
+               <li><a href="#">Buy Tickets</a></li>
+               <li><a href="#">Group Sales</a></li>
+               <li><a href="#">Reviews</a></li>
+               <li><a href="#">The Show</a></li>
+               <li><a href="#">Videos</a></li>
+               <li><a href="#">Photos</a></li>
+               <li><a href="#">Magic Shop</a></li>
+            </ul>
+        </div>
+        <ul class="filter mainnav">
+                    <li class="All current_item" ><i class="fa fa-star"></i><span>All</span></li>
+                    <li class="Software"><i class="fa fa-wrench"></i><span>Software</span></li>
+                    <li class="Game"><i class="fa fa-gamepad"></i><span>Games</span></li>
+                    <li class="Web"><i class="fa fa-globe"></i><span>Web</span></li>
+        </ul>
+        
+        <script>
+        $(function() {
+                console.log('ready!');
+                
+                
+                var $el, leftPos, newWidth,
+                $mainNav = $(".mainnav");
+                //create magic line
+                $mainNav.append("<li id='magic-line'></li>");
+                var $magicLine = $("#magic-line");
+                
+                
+                $magicLine
+                .width($(".current_item span").outerWidth())
+                .css("left", $("li.current_item").position().left)
+                .css("top", $("li.current_item").position().top + 23)
+                .data("origLeft", $magicLine.position().left)
+                .data("origWidth", $magicLine.width());
+                
+            $(".mainnav li span").hover(function() {
+                $el = $(this);
+                console.log('hovered');
+                leftPos = $el.parent().position().left;
+                //needs to be outerWidth not width to include padding too
+                newWidth = $el.outerWidth();
+                
+                console.log('leftPost: ' + leftPos, 'newWidth: ' + newWidth);
+                console.log('newWidth parent: ' + $el.parent().prop("tagName"));
+                $magicLine.stop().animate({
+                    left: leftPos,
+                    width: newWidth
+                });
+
+            }, function() {
+                $magicLine.stop().animate({
+                    left: $magicLine.data("origLeft"),
+                    width: $magicLine.data("origWidth")
+                });    
+            });                
+                
+                
+                
+              $('.mainnav li').click(function(){
+                  $('.current_item').removeClass('current_item');
+                  $(this).addClass('current_item');
+                  
+                  $magicLine
+                .width($(".current_item span").outerWidth())
+                .css("left", $("li.current_item").position().left)
+                .css("top", $("li.current_item").position().top + 23)
+                .data("origLeft", $magicLine.position().left)
+                .data("origWidth", $magicLine.width());
+                  
+              });
+                
+                
+                
+                
+                
+
+//            var $el, leftPos, newWidth,
+//                $mainNav = $("#example-one");
+
+//            $mainNav.append("<li id='magic-line'></li>");
+//            var $magicLine = $("#magic-line");
+            
+            console.log($(".current_page_item").find('a').outerWidth());
+//            $(".current_page_item").width() = $(".current_page_item").find('a').width()+'px';
+//            $magicLine
+//                .width($(".current_page_item a").outerWidth())
+//                .css("left", $(".current_page_item a").position().left)
+//                .data("origLeft", $magicLine.position().left)
+//                .data("origWidth", $magicLine.width());
+            
+
+            $("#example-one li a").hover(function() {
+                $el = $(this);
+                console.log('hovered');
+                leftPos = $el.position().left;
+                //needs to be outerWidth not width to include padding too
+                newWidth = $el.outerWidth();
+                
+                console.log('leftPost: ' + leftPos, 'newWidth: ' + newWidth);
+                console.log('newWidth parent: ' + $el.parent().prop("tagName"));
+                $magicLine.stop().animate({
+                    left: leftPos,
+                    width: newWidth
+                });
+
+            }, function() {
+                $magicLine.stop().animate({
+                    left: $magicLine.data("origLeft"),
+                    width: $magicLine.data("origWidth")
+                });    
+            });
+        });            
+        </script>
+    </body>
+</html>

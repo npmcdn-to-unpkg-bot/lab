@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/style.css" rel="stylesheet" />     
+        <script type="text/javascript" src="js/libs/jquery/jquery.js"></script>
+        <script type="text/javascript" src="js/libs/jquery.capSlide.js"></script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        
+<!--            <div class="demo">
+                <div id="capslide_img_cont" class="ic_container" style="width: 180px; height: 240px; border: 10px solid rgb(204, 204, 204);">
+                    <img src="img/photo.jpg" width="180" height="240" alt="">
+                    <div class="overlay" style="display: none; background-color: rgb(131, 46, 165);"></div>
+                    <div class="ic_caption" style="color: black; bottom: 0px; width: 180px; background-color: white;">
+                        <p class="ic_category">Category</p>
+                        <h3>Amazing Image Title</h3>
+                        <p class="ic_text" style="display: none;">
+                           Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </div>
+            </div>-->
+    
+        <ul class="products" >
+            <li>
+            	<a href="#" class="img_toggle">
+                    project2
+	        </a>
+
+	        <img class="img_toggle" data-target="#myModal" src="img/photo.jpg" data-rand_project="1" data-project_id="i" data-rand_img="kidgirl.jpg" style="cursor:pointer;">
+
+                <div class='description'>
+                        <!-- description content -->
+                        <p class='description_content'>Desciption of project2</p>
+                        <!-- end description content -->
+                </div>
+
+                <h4>par <a class="user" href="/user/popo">popo</a></h4>
+                <p>$20.00</p>
+                <div class="desc_project">Description of project</div>
+	    </li>
+        </ul>
+        
+        
+        
+        
+<!--         wrapper div 
+        <div class='wrapper' style="width: 180px; height: 240px; border: 10px solid rgb(204, 204, 204);">
+                 image 
+                <img src='img/photo.jpg' width="180" height="240"/>
+                 description div 
+                <div class='description1'>
+                         description content 
+                        <p class='description_content1'>The pack, the basic...</p>
+                         end description content 
+                </div>
+                 end description div 
+        </div>-->
+        <!-- end wrapper div -->
+
+        <style>
+div.wrapper{
+	position:relative; /* important(so we can absolutely position the description div */
+}
+div.description{
+	position:absolute; /* absolute position (so we can position it where we want)*/
+	bottom:0px; /* position will be on bottom */
+	left:0px;
+	display:none; /* hide it */
+	/* styling bellow */
+	background-color:black;
+	font-family: 'tahoma';
+	font-size:15px;
+	color:white;
+}
+div.description_content{
+	padding:10px;
+}
+.desc_project{
+    position:absolute;
+    bottom:-10px;
+    background-color: #000;
+    color:#fff;
+    opacity: 0.7;
+    display: none;
+}
+.products{
+    position:relative;
+    border: 10px solid red;
+}
+
+
+            
+        </style>
+        <script>
+            
+        
+            $(document).ready(function(){
+                $(".products").capslide({
+                                   caption_color	: 'white',
+                                   caption_bgcolor	: 'black',
+                                   overlay_bgcolor : 'black',
+                                   border			: '',
+                                   showcaption	    : false
+                               });     
+                
+                $("#capslide_img_cont").capslide({
+                                   caption_color	: 'white',
+                                   caption_bgcolor	: 'black',
+                                   overlay_bgcolor : 'black',
+                                   border			: '',
+                                   showcaption	    : false
+                }); 
+                
+                $(".products").mouseover(function(){
+                    $(this).find(".desc_project").show("slow");
+                });
+                $(".products").mouseleave(function(){
+                    $(this).find(".desc_project").hide("slow");
+                });
+            });
+            
+            //We are using $(window).load here because we want to wait until the images are loaded
+        $(window).load(function(){
+                //for each description div...
+                $('div.description').each(function(){
+                        //...set the opacity to 0...
+                        $(this).css('opacity', 0);
+                        //..set width same as the image...
+                        $(this).css('width', $(this).siblings('img').width());
+                        //...get the parent (the wrapper) and set it's width same as the image width... '
+                        $(this).parent().css('width', $(this).siblings('img').width());
+                        //...set the display to block
+                        $(this).css('display', 'block');
+                });
+
+                    $('div.wrapper').hover(function(){
+                            //when mouse hover over the wrapper div
+                            //get it's children elements with class description '
+                            //and show it using fadeTo
+                            $(this).children('.description').stop().fadeTo(500, 0.7);
+                    },function(){
+                            //when mouse out of the wrapper div
+                            //use fadeTo to hide the div
+                            $(this).children('.description').stop().fadeTo(500, 0);
+                    });
+
+            });
+
+            
+            
+        </script>
+    </body>
+</html>
