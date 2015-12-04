@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/libs/jquery/jquery.js"></script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        
+            <div class="nav-wrap">
+                <ul class="group" id="example-one">
+                   <li class="current_page_item"><a href="#">Home</a></li>
+                   <!--<li id='magic-line'></li>-->
+                   <li><a href="#">Buy Tickets</a></li>
+                   <li><a href="#">Group Sales</a></li>
+                   <li><a href="#">Reviews</a></li>
+                   <li><a href="#">The Show</a></li>
+                   <li><a href="#">Videos</a></li>
+                   <li><a href="#">Photos</a></li>
+                   <li><a href="#">Magic Shop</a></li>
+                </ul>
+            </div>
+        
+        
+        <ul>
+            <li id="example-two">
+                <a>HELLO</a>
+
+            </li>
+            <li id="example-two">
+                <a>HELLO</a>
+
+            </li>
+        </ul>
+        <script>
+            $(document).ready(function(){
+//                alert("ready");
+//                $('#example-two > a').click(function(){
+//                    $(this).parent('#example-two').toggleClass('special');
+//                
+//                });
+                $('#example-two > a').hover(function(){
+                    $(this).parent('#example-two').toggleClass('special');
+                
+                });                
+                
+
+            });
+            
+            
+        </script>
+        <style>
+            #example-two{
+                width:100px;
+                /*border-bottom:1px solid magenta;*/
+                height:20px;   
+                position: relative;
+                text-align: center;
+            }
+            
+            #example-two:before {
+                content : "";
+                position: absolute;
+                margin-left: auto;
+                margin-right: auto;
+                left: 0;
+                right: 0;
+                bottom  : 0;
+                height  : 1px;
+                width   : 0%;  /* or 100px */
+                border-bottom:1px solid magenta;
+            }
+            
+            #example-two.special:before {
+                content : "";
+                position: absolute;
+                margin-left: auto;
+                margin-right: auto;
+                left: 0;
+                right: 0;
+                bottom  : 0;
+                height  : 1px;
+                width   : 100%;  /* or 100px */
+                border-bottom:1px solid magenta;
+                
+                
+                animation-duration: 0.5s;
+                animation-name: slidein;
+            }
+            #example-two > a:hover{
+                cursor: pointer;
+            }
+            
+            
+
+            @-webkit-keyframes slidein {
+              from {
+                width: 0%; 
+              }
+
+              to {
+                width: 100%;
+              }
+            }
+            
+            
+            .nav-wrap { margin: 50px auto;  background-color: rgba(0,0,0,0.6); border-top: 2px solid white; border-bottom: 2px solid white; }
+            #example-one { margin: 0 auto; list-style: none; position: relative; width: 960px; }
+            #example-one li { /* display: inline; */ }
+            #example-one li a { color: #bbb; font-size: 14px; display: block; float: left; padding: 6px 10px 4px 10px; text-decoration: none; text-transform: uppercase; }
+            #example-one li a:hover { color: white; }
+            body{
+                background-color: grey;
+            }   
+            
+            #example-one > li + li:after {
+                content:"";
+                background: red;
+                position: absolute;
+                bottom: 25%;
+                left: 0;
+                height: 50%;
+                width: 1px;
+            }
+        </style>
+    </body>
+</html>
