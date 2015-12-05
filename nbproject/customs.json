@@ -1,7 +1,13 @@
 {
     "elements": {
         "style": {},
-        "li": {}
+        "li": {
+            "attributes": {
+                "data-target": {},
+                "data-slide-to": {},
+                "class": {}
+            }
+        }
     },
     "attributes": {}
 }
