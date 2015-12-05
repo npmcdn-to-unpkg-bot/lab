@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/libs/jquery/jquery.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div>On hover delete option</div>
+        <div class="project_container">
+            <a href="#" class="highslide" >
+                <img src="http://placehold.it/107x120" alt="Highslide JS" title="Click to enlarge" height="120" width="107">
+<!--                <div class="del_opt">Delete</div>-->
+            </a>
+            <a href="#" class="highslide" >
+                <img src="http://placehold.it/107x120" alt="Highslide JS" title="Click to enlarge" height="120" width="107">
+            </a>
+            <a href="#" class="highslide" >
+                <img src="http://placehold.it/107x120" alt="Highslide JS" title="Click to enlarge" height="120" width="107">
+            </a>
+            <a href="#" class="highslide" >
+                <img src="http://placehold.it/107x120" alt="Highslide JS" title="Click to enlarge" height="120" width="107">
+            </a>
+            
+        </div>
+        <script>
+            $(document).ready(function(){
+                $(".highslide").mouseenter(function(){
+                        var th = $(this);
+                        timer = setTimeout(function(){
+                            th.children("img").css('border', '4px solid #2F4973');
+                            th.append('<div class="del_opt"><i class="fa fa-trash-o"></i> Delete</div>');
+                            }, 100, th);
+                }).mouseleave(function() {
+                        clearTimeout(timer);
+                    });
+                $(".highslide").mouseleave(function(){
+                        $(this).children("img").css('border', '4px solid  white');
+                        $(this).children(".del_opt").remove();
+    
+                });
+//                $(".highslide img").mouseenter(function(){
+//                        var th = $(this);
+//                        timer = setTimeout(function(){
+//                            th.css('border', '4px solid #2F4973');
+//                            th.after('<div class="del_opt">Delete</div>');
+//                            }, 100, th);
+//                }).mouseleave(function() {
+//                        clearTimeout(timer);
+//                });
+//                $(".highslide img").mouseleave(function(){
+//                        $(this).css('border', '4px solid  white');
+//                        $(this).next(".del_opt").remove();
+//    
+//                });
+//                
+                
+            });
+            
+            
+        </script>
+        <style>
+            .project_container{
+                width: 700px;
+                margin: 0 auto;
+            }
+            .highslide{
+                margin: 15px;
+                height: 124px;
+                position:relative;
+                display: inline-block;
+               
+            }
+            .highslide > img{
+                border: 4px solid white;
+            }
+            .highslide > .del_opt{
+                position:absolute;
+                width: 115px;
+                bottom: -34px;
+                text-align: center;
+                background-color: #2F4973;
+                padding: 10px 0 10px 0;
+                text-decoration: none;
+                color: white;
+                font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+                font-weight: bold;
+                
+            }
+            
+            .highslide > .del_opt:hover{
+                color: #bbb;
+            }
+            
+        </style>
+        
+    </body>
+</html>
