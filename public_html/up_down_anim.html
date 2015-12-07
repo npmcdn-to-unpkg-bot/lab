@@ -20,12 +20,21 @@ and open the template in the editor.
             <a href="#" class="banner_link" >
                 <img src="http://place-hold.it/170x49/00F" alt="banner" title="Click to enlarge" height="49" width="170">
             </a>
+            <a href="#" class="banner_link" >
+                <img src="http://place-hold.it/170x49/000" alt="banner" title="Click to enlarge" height="49" width="170">
+            </a>
+            <a href="#" class="banner_link" >
+                <img src="http://place-hold.it/170x49/0F0" alt="banner" title="Click to enlarge" height="49" width="170">
+            </a>
             
             
         </div>
         <script>
             $(document).ready(function(){
-                
+                var banners = $(".banner_link").length;
+                console.log("bannerlength: " + banners);
+//                var banners = 4;
+                var to_apply = 50 *(banners-1);
                 $( ".banner_link" ).click(function() {
                     var the_element = $(this); 
                     $(".banner_link").animate({
@@ -33,36 +42,17 @@ and open the template in the editor.
                     }, 500, function() {
                       // Animation complete.
                         console.log('checking out');
-//                        the_element.css("top","0px");
                         
                         setTimeout(function(){
                             console.log("top is " + the_element.position().top);
-                            
-//                            if($(".banner_link").position().top < 0){/*if one banner is too high*/
-//                                console.log("one is too high");
-//                                $(" .banner_link:nth-of-type(1)").css("top","50px");
-//                            }
-                            
-                            
+                            var to_apply_str = to_apply + "px";
                             $(".banner_link").filter(function () {
                                 return (($(this).position().top < 0));
-                              }).css("top","50px");
-                              
-                              
+                              }).css("top",to_apply_str);
+
                         }, 550 );
-                        
-                        
-                        
-                      
                     }(the_element));
-//                     $(".banner_link").css("top","0px");
-                });
-                   
-//                if($(".banner_link").css("top") === "-100px"){
-//                    console.log("one is too high");
-//                    $(this).css("top","0px");
-//                }
-                
+                });           
             });
         
         
@@ -79,7 +69,7 @@ and open the template in the editor.
             width: 170px;
             height: 49px;
 /*            overflow: hidden;hides anything else outside the element*/
-            overflow: hidden;
+            /*overflow: hidden;*/
             margin: 0 auto;
             border: 2px solid gray;
         }
@@ -91,6 +81,18 @@ and open the template in the editor.
         .banner_link:nth-of-type(2){
             position: absolute;
             top:50px;
+            /*bottom: 0px;*/
+            /*top: 10px;*/
+        }
+        .banner_link:nth-of-type(3){
+            position: absolute;
+            top:100px;
+            /*bottom: 0px;*/
+            /*top: 10px;*/
+        }
+        .banner_link:nth-of-type(4){
+            position: absolute;
+            top:150px;
             /*bottom: 0px;*/
             /*top: 10px;*/
         }
