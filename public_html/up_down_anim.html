@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/libs/jquery/jquery.js"></script>
+    </head>
+    <body>
+        <div>Up down banners</div>
+        <div class="banner">
+            <a href="#" class="banner_link" >
+                <img src="http://place-hold.it/170x49/F00" alt="banner" title="Click to enlarge" height="49" width="170">
+            </a>
+            <a href="#" class="banner_link" >
+                <img src="http://place-hold.it/170x49/00F" alt="banner" title="Click to enlarge" height="49" width="170">
+            </a>
+            
+            
+        </div>
+        <script>
+            $(document).ready(function(){
+                
+                $( ".banner_link" ).click(function() {
+                    var the_element = $(this); 
+                    $(".banner_link").animate({
+                      top: "-=50px"
+                    }, 500, function() {
+                      // Animation complete.
+                        console.log('checking out');
+//                        the_element.css("top","0px");
+                        
+                        setTimeout(function(){
+                            console.log("top is " + the_element.position().top);
+                            
+//                            if($(".banner_link").position().top < 0){/*if one banner is too high*/
+//                                console.log("one is too high");
+//                                $(" .banner_link:nth-of-type(1)").css("top","50px");
+//                            }
+                            
+                            
+                            $(".banner_link").filter(function () {
+                                return (($(this).position().top < 0));
+                              }).css("top","50px");
+                              
+                              
+                        }, 550 );
+                        
+                        
+                        
+                      
+                    }(the_element));
+//                     $(".banner_link").css("top","0px");
+                });
+                   
+//                if($(".banner_link").css("top") === "-100px"){
+//                    console.log("one is too high");
+//                    $(this).css("top","0px");
+//                }
+                
+            });
+        
+        
+        </script>
+        
+    </body>
+    
+    
+    <style>
+        .banner{
+            
+            position: relative;
+            top: 100px;
+            width: 170px;
+            height: 49px;
+/*            overflow: hidden;hides anything else outside the element*/
+            overflow: hidden;
+            margin: 0 auto;
+            border: 2px solid gray;
+        }
+        .banner_link:nth-of-type(1){
+            position: absolute;
+            /*top: -50px;*/
+            /*bottom: 30px;*/
+        }
+        .banner_link:nth-of-type(2){
+            position: absolute;
+            top:50px;
+            /*bottom: 0px;*/
+            /*top: 10px;*/
+        }
+        
+        
+    </style>
+</html>
