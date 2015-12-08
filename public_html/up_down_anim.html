@@ -15,16 +15,16 @@ and open the template in the editor.
         <div>Up down banners</div>
         <div class="banner">
             <a href="#" class="banner_link" >
-                <img src="http://place-hold.it/170x49/F00" alt="banner" title="Click to enlarge" height="49" width="170">
+                <img src="https://placeimg.com/170/49/animals" alt="banner" title="Click to enlarge" height="49" width="170">
             </a>
             <a href="#" class="banner_link" >
-                <img src="http://place-hold.it/170x49/00F" alt="banner" title="Click to enlarge" height="49" width="170">
+                <img src="https://placeimg.com/170/49/arch" alt="banner" title="Click to enlarge" height="49" width="170">
             </a>
             <a href="#" class="banner_link" >
-                <img src="http://place-hold.it/170x49/000" alt="banner" title="Click to enlarge" height="49" width="170">
+                <img src="https://placeimg.com/170/49/nature" alt="banner" title="Click to enlarge" height="49" width="170">
             </a>
             <a href="#" class="banner_link" >
-                <img src="http://place-hold.it/170x49/0F0" alt="banner" title="Click to enlarge" height="49" width="170">
+                <img src="https://placeimg.com/170/49/tech" alt="banner" title="Click to enlarge" height="49" width="170">
             </a>
             
             
@@ -37,23 +37,45 @@ and open the template in the editor.
                 var to_apply = 50 *(banners-1);
                 $( ".banner_link" ).click(function() {
                     var the_element = $(this); 
-                    $(".banner_link").animate({
+//                    $(".banner_link").animate({
+//                      top: "-=50px"
+//                    }, 500, function() {
+//                      // Animation complete.
+//                        console.log('checking out');
+//                        
+//                        setTimeout(function(){
+//                            console.log("top is " + the_element.position().top);
+//                            var to_apply_str = to_apply + "px";
+//                            $(".banner_link").filter(function () {
+//                                return (($(this).position().top < 0));
+//                              }).css("top",to_apply_str);
+//
+//                        }, 550 );
+//                    }(the_element));
+
+                    setInterval(start_anim, 1500);
+                });  //end click         
+                
+                function start_anim(){
+                    
+                    
+                    $(".banner_link").stop().animate({
                       top: "-=50px"
                     }, 500, function() {
                       // Animation complete.
                         console.log('checking out');
                         
                         setTimeout(function(){
-                            console.log("top is " + the_element.position().top);
                             var to_apply_str = to_apply + "px";
                             $(".banner_link").filter(function () {
                                 return (($(this).position().top < 0));
                               }).css("top",to_apply_str);
 
                         }, 550 );
-                    }(the_element));
-                });           
-            });
+                    });//end animate callback
+                    
+                }//end function start_anim
+            });//end document ready
         
         
         </script>
@@ -69,7 +91,7 @@ and open the template in the editor.
             width: 170px;
             height: 49px;
 /*            overflow: hidden;hides anything else outside the element*/
-            /*overflow: hidden;*/
+            overflow: hidden;
             margin: 0 auto;
             border: 2px solid gray;
         }
