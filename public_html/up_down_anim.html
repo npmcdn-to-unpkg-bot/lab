@@ -53,7 +53,7 @@ and open the template in the editor.
 //                        }, 550 );
 //                    }(the_element));
 
-                    setInterval(start_anim, 1500);
+                    setInterval(start_anim, 4500);
                 });  //end click         
                 
                 function start_anim(){
@@ -61,7 +61,7 @@ and open the template in the editor.
                     
                     $(".banner_link").stop().animate({
                       top: "-=50px"
-                    }, 500, function() {
+                    }, 500,"linear", function() {
                       // Animation complete.
                         console.log('checking out');
                         
