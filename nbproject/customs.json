@@ -1,5 +1,11 @@
 {
     "elements": {
+        "a": {
+            "attributes": {
+                "href": {},
+                "class": {}
+            }
+        },
         "style": {},
         "li": {
             "attributes": {
