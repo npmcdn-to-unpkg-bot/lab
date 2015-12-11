@@ -30,12 +30,15 @@ and open the template in the editor.
             
         </div>
         <script>
+            //http://stackoverflow.com/questions/15978645/jquery-animate-with-setinterval
+
             $(document).ready(function(){
                 var banners = $(".banner_link").length;
                 console.log("bannerlength: " + banners);
 //                var banners = 4;
                 var to_apply = 50 *(banners-1);
                 $( ".banner_link" ).click(function() {
+                    
                     var the_element = $(this); 
 //                    $(".banner_link").animate({
 //                      top: "-=50px"
@@ -53,7 +56,8 @@ and open the template in the editor.
 //                        }, 550 );
 //                    }(the_element));
 
-                    setInterval(start_anim, 4500);
+                    setInterval(start_anim, 4000);
+
                 });  //end click         
                 
                 function start_anim(){
@@ -65,16 +69,19 @@ and open the template in the editor.
                       // Animation complete.
                         console.log('checking out');
                         
-                        setTimeout(function(){
+//                        setTimeout(function(){
                             var to_apply_str = to_apply + "px";
                             $(".banner_link").filter(function () {
+                                /*if one of the banner_link elements is getting too high*/
                                 return (($(this).position().top < 0));
-                              }).css("top",to_apply_str);
+                              }).css("top",to_apply_str);/*then move it down(add px)*/
 
-                        }, 550 );
+//                        }, 550 );
                     });//end animate callback
                     
                 }//end function start_anim
+                
+
             });//end document ready
         
         
