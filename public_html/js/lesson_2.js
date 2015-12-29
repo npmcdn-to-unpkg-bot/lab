@@ -151,7 +151,7 @@ var newObj = {
   }
 };
 
-
+ 
 var finalObj = $.extend({}, obj, newObj);
 
 console.log(finalObj.a); //outputs "i am a lonely property"
