@@ -91,9 +91,6 @@ $("#some-div").click(person.hello.bind(person));
 
 
 
-//////////////////////////LESSON 2////////////////////
-
-/**************global namespace***********************/
 
 
 
