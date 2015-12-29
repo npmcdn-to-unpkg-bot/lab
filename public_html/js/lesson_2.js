@@ -2,6 +2,8 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
+ * 
+ * source of this tutorial: http://www.jblotus.com/2013/01/13/common-javascript-gotchas/
  */
 
 $(document).ready(function(){
@@ -158,4 +160,10 @@ var finalObj = $.extend({}, obj, newObj);
 console.log(finalObj.a); //outputs "i am a lonely property"
 console.log(finalObj.b()); //outputs "i am a lonely function"
 
+
+
+
+
+
 });
+
