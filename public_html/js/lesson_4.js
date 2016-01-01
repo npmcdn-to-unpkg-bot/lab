@@ -38,7 +38,8 @@ var o = new Array();
 o.push(3);
 
 /**********Constuctor Function*********************/
-var Point = function (x, y) {
+var Point = function (x, y) { 
+    
     this.x = x;
     this.y = y;
     this.add = function (otherPoint) {
