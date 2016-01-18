@@ -9,7 +9,11 @@ and open the template in the editor.
         <title>qtip</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link type="text/css" rel="stylesheet" href="/css/jquery.qtip.css" />
+        <link type="text/css" rel="stylesheet" href="css/jquery.qtip.css" />
+        <link type="text/css" rel="stylesheet" href="css/style.css" />
+        <link href="css/font-mfizz/font-mfizz.css" rel="stylesheet"/>
+
+
     </head>
     <body>
         <div>qtip</div>
@@ -58,7 +62,42 @@ and open the template in the editor.
             </tr>
         </table>
         <script src="js/libs/jquery/jquery.js"></script>
-         <script src="/js/libs/jquery.qtip.js"></script>
+        <script src="js/libs/ratings.js"></script>
+         
+         <script src="js/libs/jquery.qtip.js"></script>
+         
+         
+         <script >
+             
+             $(document).ready(function(){
+//                 $('.logo').qtip({ // Grab some elements to apply the tooltip to
+//                      content: {
+//                          text: 'My common piece of text here'
+//                      }
+//                  });
+                  
+                  // Grab all elements with the class "hasTooltip"
+                $('.logo').each(function() { // Notice the .each() loop, discussed below
+                    $(this).qtip({
+                        content: {
+                            text: $(this).next('.tg-031e').attr('class').split(' ')[1] // Use the "div" element next to this for the content
+                        },
+                        
+                        style:{classes: 'customQtip'},
+                        
+                        position: {
+                            my: 'top center',  // Position my top left...
+                            at: 'bottom center', // at the bottom right of...
+                            target: $(this) // my target
+                        }
+                        
+                    });
+                });
+             });
+             
+
+             
+         </script>
     </body>
         
 

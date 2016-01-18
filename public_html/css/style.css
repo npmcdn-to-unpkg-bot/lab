@@ -159,3 +159,176 @@ ul.products li {
 ul.products li img {
 	width: 200px;
 }
+
+/*////////////////////QTIP PAGE////////////////////////*/
+body{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+}
+canvas{
+    height:1000px;
+}
+
+.skills {
+	list-style: none;
+}
+ .tg  {border-collapse:collapse;border-spacing:0;
+                  border-color: red;
+                  
+        -moz-border-radius: 15px;
+        -webkit-border-radius: 15px;
+        border: 1px solid red;
+        color: #FBEC5D;
+        margin: 0 auto;
+        margin-top: 20px;
+        
+      }
+            
+            .tg td
+            {
+                font-family:Arial,sans-serif;
+                font-size:14px;
+                padding:10px 5px;
+                border-style:solid;
+                border-width:1px;
+                overflow:hidden;
+                word-break:normal;
+                /*background-color: #fff;*/
+                /*border-color: white;*/
+            }
+            .tg th
+            {
+                font-family:Arial, sans-serif;
+                font-size:14px;
+                font-weight:normal;
+                padding:10px 5px;
+                border-style:solid;
+                border-width:1px;
+                overflow:hidden;
+                word-break:normal;
+                /*border-color: white;*/
+            }
+            .icon {
+                 transform :  scale(4);
+                -webkit-transform :  scale(4);
+                font-size: 25px;
+            }
+            .logo{
+                 text-align: center;
+            }
+ .bubble 
+{
+            display:none;
+            position: absolute;
+            font-family: Grandstander, sans-serif;
+            top:1px;
+            left:100px;/*positionning*/
+            width: 120px; /*Size*/
+            height: 25px;
+            padding: 0px;
+            padding-top: 3px;
+            background: #000;
+            color:#fff;
+            font-weight: bold;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            border-color: rgb(251,236,93);
+            text-align: center;
+           
+}
+
+.bubble:after 
+{
+            content: '';
+            position: absolute;
+            border-style: solid;
+            border-width: 11px 11px 0;
+            border-color: #000 transparent;
+            display: block;
+            width: 0;
+            z-index: 1;
+            bottom: -11px;
+            left: 47px;
+}          
+
+.customQtip{
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    
+}
+
+
+
+/* -----------------------------------
+FORM PAGE
+----------------------------------- */
+.input, .select, .textarea{
+	width: 100%;
+	*width: 90%; /*for IE not support box-sizing*/
+	box-sizing: border-box;/*borders and padding can be added*/
+	border: 1px solid #999;
+	border-radius: .3em;
+}
+.row-form{
+	/*border: 1px solid red;*/
+	clear: left; /*no interaction between boxes*/
+	margin:  0 0 1em;
+
+	overflow: hidden;/*the rows will keeping wrapping around no matter what floats inside*/
+	zoom:1;
+}
+.label{
+	display: block; /*the label sits above the form*/
+	margin: 0 0 .1em;
+}
+	.submission-form{
+		max-width: 40em;/*form will never go wider than*/
+		padding-top: 2em;
+                margin: 0 auto;
+                /*padding-left:-550px;*/
+	}
+	.label{
+		float: left;
+		width: 25%;/*liquid*/
+		margin: 0 2% 0 0;
+		text-align: right;
+	}
+	.input, .select, .textarea{
+		float: left;
+		width:70%;
+	}
+	.form-indent{
+		margin-left: 27%;
+		width: 70%;
+	}
+	.input, .textarea {
+	padding: 5px;
+}
+
+.btn{
+	font-family: 'Grandstander', serif;
+	background-color: #A6A6A6;
+	border-radius: .3em;
+	padding-bottom: .3em;
+}
+.btn:active{background-color: #fff; color:#A6A6A6;}
+/* -----------------------------------
+FOOTER
+----------------------------------- */
+.footer-content{
+	font-size:70%;
+	display: block;
+	
+	margin: 0 auto;
+	/* border: 2px solid white; */
+	text-align: center;
+	width: 100%;
+	/*height: 80px;*/
+	padding: 50px 0 50px 0;
+    color:#696969;
+}
