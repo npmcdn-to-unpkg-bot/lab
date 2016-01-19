@@ -80,7 +80,28 @@ and open the template in the editor.
                 $('.logo').each(function() { // Notice the .each() loop, discussed below
                     $(this).qtip({
                         content: {
-                            text: $(this).next('.tg-031e').attr('class').split(' ')[1].toUpperCase() // Use the "div" element next to this for the content
+                            text: function(){
+                                
+                                var value = $(this).next('.tg-031e').attr('class').split(' ')[1].toUpperCase();
+                            
+                                switch(value){
+                                    case 'HTML5':
+                                        return 'HTML5';
+                                    case 'CPP':
+                                        return 'C++';
+                                    case 'JAVASCRIPT':
+                                        return 'JAVASCRIPT';
+                                    case 'PHP':
+                                        return 'PHP';
+                                    case 'PYTHON':
+                                        return 'PYTHON';
+                                    case 'POWERSHELL':
+                                        return 'POWERSHELL';
+                                    case 'JAVA':
+                                        return 'JAVA';
+                                        
+                                }
+                            }// Use the "div" element next to this for the content
                         },
                         
                         style:{classes: 'customQtip'},
