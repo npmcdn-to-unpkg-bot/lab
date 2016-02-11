@@ -259,7 +259,8 @@ canvas{
     color: #fff;
     font-size: 12px;
     font-weight: bold;
-    
+    font-family: Grandstander, sans-serif;
+    border-color: #000;
 }
 
 
