@@ -13,8 +13,8 @@
 
 <style type="text/css">
 	img {
-		height: 500px;
-		width: 700px;
+		height: 480px;
+		width: 680px;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -40,10 +40,34 @@
 		overflow: hidden;
 	}
 
+	.line {
+		
+
+		
+		height: 480px;
+		width: 680px;
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		z-index: 2;
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-bottom: 5px solid red;
+		cursor: n-resize;
+		/*padding: 10px;*/
+
+	}
+	.line > .jpg{
+		cursor: default;
+	}
+
 </style>
 	<div id="slider">
 		
-		<img class="jpg" src="img/Tiger.jpg" />
+		<div class="line"><img class="jpg" src="img/Tiger.jpg" /></div>
+
+		<!-- <img class="jpg" src="img/Tiger.jpg" /> -->
+
 		<img class="svg" src="img/Tiger_Vector.png" />
 
 
@@ -52,8 +76,14 @@
 
 	<script type="text/javascript">
 	$(document).ready(function(){
-		$( ".jpg" ).draggable({
-		  axis: "y"
+
+		//http://stackoverflow.com/questions/11713183/jquery-ui-draggable-drag-parent-div
+		//Drag ONLY the parent and not the child 
+		$( ".line" ).draggable({
+			cursor: "n-resize",
+		  	axis: "y",
+		  	cancel: ".jpg",
+
 		});
 
 	});
