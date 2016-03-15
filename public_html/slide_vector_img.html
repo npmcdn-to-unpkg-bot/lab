@@ -90,14 +90,19 @@
 		// });
 
 		$( ".line" ).resizable({ 
-			ghost: true, 
-			minWidth: 680 ,
-			maxWidth: 681 ,
+			// ghost: true, 
+			// minWidth: 680 ,
+			// maxWidth: 681 ,
+
+			handles: 's',
 			start: function( event, ui ) {
 
 
 
-			}
+			},
+			stop: function(event, ui) {
+		        $(this).css("width", '');
+		   	}
 
 
 		})
