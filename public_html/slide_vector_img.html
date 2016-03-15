@@ -54,7 +54,8 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		border-bottom: 5px solid red;
+		border-bottom: 5px dashed red;
+		
 		/*cursor: n-resize;*/
 		/*padding: 10px;*/
 
@@ -63,11 +64,20 @@
 		cursor: default;
 	}
 
+	/*.line .dot {
+		width: 100px;
+		height: 100px;
+		background: red;
+		-moz-border-radius: 50px;
+		-webkit-border-radius: 50px;
+		border-radius: 50px;
+	}*/
+
 </style>
 	<div id="slider">
 		
 		<!-- <div class="line"><img class="jpg" src="img/Tiger.jpg" /></div> -->
-		<div class="line"></div>
+		<div class="line"><div class="dot"></div></div>
 
 		<!-- <img class="jpg" src="img/Tiger.jpg" /> -->
 
