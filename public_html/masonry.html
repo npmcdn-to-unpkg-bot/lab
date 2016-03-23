@@ -12,7 +12,7 @@
 <body>
 <style type="text/css">
 	.grid {
-		width: 850px;
+		width: 780px;
 		border: 1px solid blue;
 		margin: 0 auto;
 		/*height: 850px;*/
@@ -20,12 +20,38 @@
 	.grid-item{
 		/*float: left;*/
 	}
+	.reflow{
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		padding: 10px 5px 10px 5px;
+		color: #fff;
+		background-color: #645BB8;
+		border: none;
+		font-weight: bold;
+		border-radius: 10px;
+	}
 
+	.reflow:hover{
+		cursor: pointer;
+		background-color: #AE66BB;
+
+
+	}
+
+	.reflow::active{
+		background-color: #000;
+	}
 
 
 </style>
 <div class="grid">
   
+</div>
+<div>
+	<button class="reflow">REFLOW</button>
+
+
 </div>
 
 
@@ -64,9 +90,30 @@
 					$('.grid').masonry({
 			  // set itemSelector so .grid-sizer is not used in layout
 			  itemSelector: '.grid-item',
-			  columnWidth : 270
+			  columnWidth : 260
 			})			
 		});
+
+
+
+		$('.reflow').click(function(){
+			reflow();
+		});
+
+
+		function reflow(){
+			for (var i = 0; i <9; i++) {
+				var height = Math.floor((Math.random() * 300) + 50); 
+				$('.' + (i+1)).css('height', height+'px');		
+			};		
+			$('.grid').masonry({
+			  // set itemSelector so .grid-sizer is not used in layout
+			  itemSelector: '.grid-item',
+			  columnWidth : 260
+			})			
+
+
+		}
 
 
 
