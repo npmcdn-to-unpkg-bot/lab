@@ -4,12 +4,26 @@
 	<title>Masonry test</title>
 	<script src="js/libs/jquery/jquery.js"></script>
 	<script src="js/libs/masonry.pkgd.min.js"></script>	
+	<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
 </head>
 
 
 
 <body>
+<style type="text/css">
+	.grid {
+		width: 850px;
+		border: 1px solid blue;
+		margin: 0 auto;
+		/*height: 850px;*/
+	}
+	.grid-item{
+		/*float: left;*/
+	}
 
+
+
+</style>
 <div class="grid">
   
 </div>
@@ -22,10 +36,10 @@
 
 
 <script type="text/javascript">
-	$(document).ready(function(){
+	$(window).load(function(){
 		// console.log("ready");
 		for (var i = 0; i <9; i++) {
-
+			console.log("inside for loop");
 			var string = "img/stock/file (" +(i+1)+ ").jpg";
 			var height = Math.floor((Math.random() * 300) + 50);
 			var width = Math.floor((Math.random() * 150) + 100);
@@ -34,19 +48,26 @@
 			width+'px; "';
 			console.log(string_size);
 			// $('.grid').append('<img class="'+(i+1)+'" src="' +string+ '"' + string_size+ ' >');
-			$('.grid').append('<img class="grid-item '+(i+1)+'" src="' +string+ '">' );
+			// $('.grid').append('<img class="grid-item '+(i+1)+'" src="' +string+ '">' );
+			$('.grid').append('<div class="grid-item"><img class="'+(i+1)+'" src="' +string+ '"> </div>' );
 
 			$('.' + (i+1)).css('height', height+'px');
-			$('.' + (i+1)).css('height', width+'px');
+			$('.' + (i+1)).css('width', 250+'px');
 			
 		};
 
 		// $('.grid').append('<img src="' + + '" >');
 
-		$('.grid').masonry({
-		  // set itemSelector so .grid-sizer is not used in layout
-		  itemSelector: '.grid-item'
-		})
+
+		$('.grid').imagesLoaded(function(){
+			console.log("masonry in action");
+					$('.grid').masonry({
+			  // set itemSelector so .grid-sizer is not used in layout
+			  itemSelector: '.grid-item',
+			  columnWidth : 270
+			})			
+		});
+
 
 
 
