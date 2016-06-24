@@ -6,19 +6,19 @@
 </head>
 <body>
 	<div class="container">
-		<div class="item">
+		<div class="item even">
 			<a>HOME</a>
 		</div>
 
-		<div>
+		<div class="item odd">
 			<a>ABOUT</a>
 		</div>
 
-		<div>
+		<div class="item even">
 			<a>PROJECTS</a>
 		</div>
 
-		<div>
+		<div class="item odd">
 			<a>CONTACT</a>
 		</div>		
 	</div>
@@ -33,42 +33,83 @@
 		margin: 0 auto;
 		width: 90%;
 		height: 90%;
-		border: 1px solid blue;
+		/*border: 1px solid blue;*/
 		text-align: center;
+		zoom: 0.9;
 
 	}
 
 	.container > div {
 		font-size: 50px;
-		padding: 40px;
+		padding: 20px;
 		/*border: 1px solid yellow;*/
 		z-index: 1;
-
+		padding-top: 80px;
 		position: relative;
 
 	}
 
 	.container > div:after {
 		  background-color: #000;
-		  border:1px solid yellow;
+		  border-top:1px solid yellow;
+		  border-bottom:1px solid yellow;
 		  bottom: 0;
 		  content: '';
 		  display: block;
-		  height: 98%;
+		  height: 100%;
 		  width: 100%;
 		  left: 0;
 		  position: absolute;
 		  right: 0;
-		  transform: skewY(-1.5deg);
+		  transform: skewY(-5deg);
 		  transform-origin: 100%;
 		  z-index: -1;
+	}
+
+	.container div:nth-child(odd):after{
+		border-right: 1px solid yellow;
+		/*background: linear-gradient(to left, #000 50%, #000 50%);*/
+		/*background-color: yellow;*/
+	}
+	.container div:nth-child(even):after{
+		border-left: 1px solid yellow;
+	}
+
+	.container .change:after  {
+	   	background-color: yellow ;
+	   	
 	}
 
 
 	.container > div > a{
 		color: yellow;
 	}
+	.container > div > a.switch{
+		color: #000;
+	}
 
+	.container > .item:hover {
+		cursor: pointer;
+	}
 
 </style>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$(".item").hover(function(){
+			// $(this).addClass('change').attr("data-color", "yellow");
+			// $(this).addClass('change');
+			$(".item").removeClass('change');
+			$(".item a").removeClass('switch');
+
+
+			$(this).addClass('change');
+			$(this).find('a').addClass('switch');
+		});
+
+
+	});
+
+</script>
 </html>
