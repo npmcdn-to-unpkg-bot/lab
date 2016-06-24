@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+</head>
+<body>
+
+<style type="text/css">
+	div {border: 5px solid red; width: 400px}
+	ul, li { margin: 10px; padding: 5px;width:auto;}
+	ul {border: 3px solid green;}
+	li {border: 2px solid blue;}
+
+
+
+
+</style>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$("input:text:visible:first").focus();
+
+		$('.text_input').keydown(function(e){
+		    var keyCode = e.keyCode || e.which; 
+
+			if(keyCode == 9){
+
+				
+				console.log($(this));
+				setTimeout(function(){
+				   $(this).parent().parent().next('ul .text_input').focus();
+				}, 0);
+
+		      }
+		});
+
+
+		// $('ul li input').keydown(function(e){
+		// 	    var keyCode = e.keyCode || e.which; 
+		// 				if(keyCode == 9){
+			        
+		// 	        	setTimeout(function(){
+		// 	             $(this).parent().parent().next('ul li input[type="text"]').focus();
+		// 	          }, 0);
+		// 	      }
+		// 	});
+	});
+
+
+</script>
+<div> DIV
+
+
+
+  <ul> UL
+    <li>LI <input type=text placeholder="input1" class="text_input"></li>
+    <li>LI<button>button</button></li>
+    <li>LI<input type="submit" value="submit"><button></button></li>
+  </ul>
+  <ul> UL
+    <li>LI<input type=text placeholder="input2" class="text_input"></li>
+    <li>LI<button>button</button></li>
+    <li>LI<input type="submit" value="submit"><button></button></li>
+  </ul>
+  <ul> UL
+    <li>LI<input type=text placeholder="input3" class="text_input"></li>
+    <li>LI<button>button</button></li>
+    <li>LI<input type="submit" value="submit"><button></button></li>
+  </ul>
+</div>
+</body>
+</html>
