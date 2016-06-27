@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="js/libs/jquery/jquery.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="item even home">
+			<a>HOME</a>
+		</div>
+
+		<div class="item odd">
+			<a>ABOUT</a>
+		</div>
+
+		<div class="item even">
+			<a>PROJECTS</a>
+		</div>
+
+		<div class="item odd">
+			<a>CONTACT</a>
+		</div>		
+	</div>
+
+</body>
+<style type="text/css">
+	body {
+		background-color: #000;
+	}
+
+	.container {
+		margin: 0 auto;
+		width: 30%;
+		height: 400px;
+		border: 1px solid blue;
+
+	}
+
+	.container .item{ 
+		color: rgb(251,236,93);
+		text-align: center;
+	}
+
+	.container .home {
+		margin: 0 auto;
+		border: 1px solid rgb(251,236,93);
+		width:100px;
+		height: 100px;
+
+	}
+	.container .home {
+		background-image: url('../public_html/img/bubble.svg');
+		background-size: 100px;
+
+	}
+	.container .home a {
+		position: relative;
+		top:30%;
+		border: 1px solid blue;
+		font-size: 20px;
+	}
+
+
+</style>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+
+	});
+
+</script>
+</html>
