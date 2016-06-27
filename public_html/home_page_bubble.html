@@ -47,6 +47,7 @@
 		border: 1px solid rgb(251,236,93);
 		width:100px;
 		height: 100px;
+		margin-bottom: 20px;
 
 	}
 	.container .home {
@@ -59,6 +60,22 @@
 		top:30%;
 		border: 1px solid blue;
 		font-size: 20px;
+		font-weight: bold;
+
+	}
+	.container .home {
+		-webkit-animation: float 1s infinite;
+	}
+	@-webkit-keyframes float {
+		0% {
+			margin-top: 0;
+		} 
+		50% {
+			margin-top: 10px;
+		} 
+		100% {
+			margin-top: 0;
+		}
 	}
 
 
