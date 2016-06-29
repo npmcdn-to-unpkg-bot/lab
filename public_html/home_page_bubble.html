@@ -18,7 +18,7 @@
 			<a>PROJECTS</a>
 		</div>
 
-		<div class="item odd">
+		<div class="item odd contact">
 			<a>CONTACT</a>
 		</div>		
 	</div>
@@ -130,6 +130,35 @@
 
 
 	.container .projects a{
+		position: relative;
+		top:30%;
+		border: 1px solid blue;
+		font-size: 15px;
+		font-weight: bold;
+
+	}
+
+	.container .contact{
+		background-image: url('../public_html/img/bubble.svg');
+		background-size: 100px;
+
+		margin: 0 auto;
+		border: 1px solid rgb(251,236,93);
+		width:100px;
+		height: 100px;
+		margin-bottom: 20px;
+
+				/* flip background vertically */
+		-webkit-transform:rotate(-90deg);
+		-moz-transform:rotate(-90deg);
+		-ms-transform:rotate(-90deg);
+		-o-transform:rotate(-90deg);
+		transform:rotate(-90deg);
+
+	}
+
+
+	.container .contact a{
 		position: relative;
 		top:30%;
 		border: 1px solid blue;
