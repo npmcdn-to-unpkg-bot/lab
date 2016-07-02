@@ -5,7 +5,7 @@
 	<script src="js/libs/jquery/jquery.js"></script>
 </head>
 <body>
-	<div class="container">
+<!-- 	<div class="container">
 		<div class="item even home">
 			<a>HOME</a>
 		</div>
@@ -25,8 +25,34 @@
 		<div class="item odd contact">
 			<a>CONTACT</a>
 		</div>		
+	</div> -->
+	<div class="container">
+		<table class="tg">
+		  <tr>
+		    <th class="tg-yw4l"></th>
+		    <th class="tg-yw4l col_home">
+		    	<div class="item even home">
+					<a>HOME</a>
+				</div>
+			</th>
+		    <th class="tg-yw4l"></th>
+		  </tr>
+		  <tr>
+		    <td class="tg-yw4l"></td>
+		    <td class="tg-yw4l circle"> </td>
+		    <td class="tg-yw4l"></td>
+		  </tr>
+		  <tr>
+		    <td class="tg-yw4l"></td>
+		    <td class="tg-yw4l col_about">
+			    <div class="item odd about">
+					<a class="text">ABOUT</a>
+				</div>
+			</td>
+		    <td class="tg-yw4l"></td>
+		  </tr>
+		</table>
 	</div>
-
 </body>
 <style type="text/css">
 	body {
@@ -35,10 +61,10 @@
 
 	.container {
 		margin: 0 auto;
-		width: 30%;
-		height: 400px;
+		width: 90%;
+		height: 500px;
 		border: 1px solid blue;
-		
+
 
 	}
 
@@ -52,7 +78,8 @@
 	.container .item{ 
 		color: rgb(251,236,93);
 		text-align: center;
-		position: relative;
+
+
 
 	}
 
@@ -71,6 +98,9 @@
 	}
 
 	.container .about{
+/*		top: 10px;
+		right: 10px;*/
+
 		background-image: url('../public_html/img/bubble.svg');
 		background-size: 100px;
 
@@ -86,6 +116,7 @@
 		-ms-transform:scaleY(-1);
 		-o-transform:scaleY(-1);
 		transform:scaleY(-1);
+
 
 	}
 	.container .about  a.text {
@@ -187,6 +218,55 @@
 		100% {
 			margin-top: 0;
 		}
+	}
+
+	.tg  {
+		border-collapse:collapse;
+		border-spacing:0;
+		border-color: #fff;
+		width: 100%;
+		height: 100%;
+
+	}
+	.tg td{
+		
+		font-family:Arial, sans-serif;
+		font-size:14px;
+		padding:10px 5px;
+		border-style:solid;
+		border-width:1px;
+		overflow:hidden;
+		word-break:normal;
+		border-color: #fff;
+	}
+	.tg th{
+		font-family:Arial, sans-serif;
+		font-size:14px;
+		font-weight:normal;
+		padding:10px 5px;
+		border-style:solid;
+		border-width:1px;
+		overflow:hidden;
+		word-break:normal;
+		border-color: #fff;
+	}
+
+	.tg th.col_home  { 
+		width: 100px;
+		height: 100px;
+
+	}
+	.tg th.col_about  { 
+		width: 100px;
+		height: 100px;
+	}
+	.tg th.center { 
+		width: 300px;
+
+	} 
+
+	.tg .tg-yw4l{
+		vertical-align:top
 	}
 
 
