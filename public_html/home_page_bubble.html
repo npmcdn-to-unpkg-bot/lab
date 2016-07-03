@@ -156,7 +156,7 @@
 	.container .home:hover {
 		-webkit-animation-timing-function: ease; /* Chrome, Safari, Opera */
     	animation-timing-function: ease;
-		-webkit-animation: float 1s infinite;
+		-webkit-animation: float_ud 1s infinite;
 	}
 
 	.container .projects{
@@ -208,6 +208,15 @@
 	}
 
 
+	.container .contact:hover {
+		transform:rotate(-65deg);
+		-webkit-animation-timing-function: ease; /* Chrome, Safari, Opera */
+    	animation-timing-function: ease;
+		-webkit-animation: float_rl 1s infinite;
+	}
+
+
+
 	.container .contact a{
 		position: relative;
 		top:30%;
@@ -216,15 +225,29 @@
 		font-weight: bold;
 
 	}
-	@-webkit-keyframes float {
+	@-webkit-keyframes float_ud {
 		0% {
-			transform: translateY(0);
+
+			transform:  translateY(0);
 		} 
 		50% {
 			transform: translateY(10px);
 		} 
 		100% {
 			transform: translateY(0);
+		}
+	}
+
+	@-webkit-keyframes float_rl {
+		0% {
+			/*-webkit-transform:rotate(-90deg);*/
+			transform:  rotate(180deg) translateX(0);
+		} 
+		50% {
+			transform: translateX(10px);
+		} 
+		100% {
+			transform: translateX(0);
 		}
 	}
 
