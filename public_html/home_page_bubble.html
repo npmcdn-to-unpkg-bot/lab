@@ -218,13 +218,13 @@
 	}
 	@-webkit-keyframes float {
 		0% {
-			margin-top: 0;
+			transform: translateY(0);
 		} 
 		50% {
-			margin-top: 5px;
+			transform: translateY(10px);
 		} 
 		100% {
-			margin-top: 0;
+			transform: translateY(0);
 		}
 	}
 
@@ -271,10 +271,12 @@
 	.tg td.col_projects  { 
 		width: 100px;
 		height: 100px;
+		vertical-align: middle;
 	}
 	.tg td.col_contact  { 
 		width: 100px;
 		height: 100px;
+		vertical-align: middle;
 	}
 	.tg td.center { 
 		width: 500px;
@@ -291,6 +293,10 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 
+        $('.tg th.col_home').hover(function(){
+            console.log('hovered!!');
+            $('.tg td.col_about').css('margin-top', '-50px');
+        });
 
 	});
 
