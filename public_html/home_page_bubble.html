@@ -108,13 +108,13 @@
 	@-webkit-keyframes float_ud_rev {
 		0% {
 
-			transform: rotate(-180deg) translateY(0);
+			transform: rotate(180deg) translateY(0);
 		} 
 		50% {
-			transform: rotate(-180deg) translateY(10px);
+			transform: rotate(180deg) translateY(10px);
 		} 
 		100% {
-			transform: rotate(-180deg) translateY(0);
+			transform: rotate(180deg) translateY(0);
 		}
 	}
 
@@ -176,7 +176,7 @@
 	.container .about:hover {
 		-webkit-animation-timing-function: ease; /* Chrome, Safari, Opera */
     	animation-timing-function: ease;
-		-webkit-animation: float_ud 1s infinite;
+		-webkit-animation: float_ud_rev 1s infinite;
 	}
 	.container .about  a.text {
 		position: relative;
@@ -190,7 +190,7 @@
 		-moz-transform:scaleY(-1);
 		-ms-transform:scaleY(-1);
 		-o-transform:scaleY(-1);
-		transform:scaleY(-1);
+		transform: rotate(180deg) scaleY(-1);
 
 
 
