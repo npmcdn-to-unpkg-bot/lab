@@ -134,6 +134,21 @@
 		}
 	}
 
+	@-webkit-keyframes float_lr {
+		0% {
+			/*note: you have to combine them in the same declaration instead
+			so they don't override each other
+			*/
+			transform: rotate(90deg) translateY(0);
+		}
+
+		50% {
+			transform: rotate(90deg) translateY(10px);
+		} 
+		100% {
+			transform:  rotate(90deg) translateY(0);
+		}
+	}
 	.container .home {
 		margin: 0 auto;
 		border: 1px solid rgb(251,236,93);
@@ -227,6 +242,14 @@
 		-ms-transform:rotate(90deg);
 		-o-transform:rotate(90deg);
 		transform:rotate(90deg);
+
+	}
+
+	.container .projects:hover {
+		-webkit-animation-timing-function: ease; /* Chrome, Safari, Opera */
+    	animation-timing-function: ease;
+
+		-webkit-animation: float_lr 1s infinite;
 
 	}
 
