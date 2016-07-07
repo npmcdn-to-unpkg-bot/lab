@@ -100,6 +100,25 @@
 
 
 	}
+	.container .item:hover{
+		/*background-color: blue;*/
+		background-image: url('../public_html/img/interface.svg');
+/*				-webkit-animation-timing-function: ease;  Chrome, Safari, Opera 
+    	animation-timing-function: ease;*/
+		/*-webkit-animation: change_bg 1s infinite;*/
+	}
+
+	@-webkit-keyframes change_bg {
+		0% {
+			color: yellow;
+			background-image: url('../public_html/img/bubble.svg');
+		} 
+
+		100% {
+			background-image: url('../public_html/img/interface.svg');
+			color: blue;
+		}
+	}
 
 	@-webkit-keyframes float_ud {
 		0% {
