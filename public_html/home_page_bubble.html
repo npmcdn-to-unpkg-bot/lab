@@ -35,7 +35,7 @@
 		  <tr>
 		    <th class="tg-yw4l"></th>
 		    <th class="tg-yw4l col_home">
-		    	<div class="item even home">
+		    	<div class="item even home" data-angle="vertical">
 					<a>HOME</a>
 				</div>
 			</th>
@@ -43,7 +43,7 @@
 		  </tr>
 		  <tr>
 		    <td class="tg-yw4l col_contact">
-		    	<div class="item even contact">
+		    	<div class="item even contact" data-angle="horizontal">
 					<a>CONTACT</a>
 				</div>
 		    </td>
@@ -64,7 +64,7 @@
 		    	</div>
 		    </td>
 		    <td class="tg-yw4l col_projects">
-		    	<div class="item odd projects">
+		    	<div class="item odd projects" data-angle="horizontal">
 					<a>PROJECTS</a>
 				</div>	
 			</td>
@@ -72,7 +72,7 @@
 		  <tr>
 		    <td class="tg-yw4l"></td>
 		    <td class="tg-yw4l col_about">
-			    <div class="item odd about">
+			    <div class="item odd about" data-angle="vertical">
 					<a class="text">ABOUT</a>
 				</div>
 			</td>
@@ -91,7 +91,7 @@
         $('.container .item').mouseenter(function(){
             console.log('hovered!!');
             // $('.tg td.col_about').css('margin-top', '-50px');
-            startTween();
+            startTween($(this));
         });
 
 		
@@ -100,9 +100,13 @@
 
 
 
-	function startTween() {
-		console.log('starting tween');
+	function startTween(item) {
 
+			console.log(item.data('angle'));
+			console.log('rot: '+ rot);
+
+			var abs_angle = Math.abs(rot);
+			
 			var res = ['odd', 'even'];
 			var result = res[Math.floor(Math.random()*res.length)];
 
@@ -167,7 +171,7 @@
 	.container .circle {
 		width: 200px;
 		height: 380px;
-		border: 1px solid blue;
+		/*border: 1px solid blue;*/
 		margin: 0 auto;
 
 
@@ -263,7 +267,7 @@
 	}
 	.container .home {
 		margin: 0 auto;
-		border: 1px solid rgb(251,236,93);
+		/*border: 1px solid rgb(251,236,93);*/
 		width:100px;
 		height: 100px;
 		margin-bottom: 20px;
@@ -284,7 +288,7 @@
 		background-size: 100px;
 
 		margin: 0 auto;
-		border: 1px solid rgb(251,236,93);
+		/*border: 1px solid rgb(251,236,93);*/
 		width:100px;
 		height: 100px;
 		margin-bottom: 20px;
@@ -325,7 +329,7 @@
 	.container .home a {
 		position: relative;
 		top:30%;
-		border: 1px solid blue;
+		/*border: 1px solid blue;*/
 		font-size: 20px;
 		font-weight: bold;
 
@@ -343,7 +347,7 @@
 		background-size: 100px;
 
 		margin: 0 auto;
-		border: 1px solid rgb(251,236,93);
+		/*border: 1px solid rgb(251,236,93);*/
 		width:100px;
 		height: 100px;
 		margin-bottom: 20px;
@@ -369,7 +373,7 @@
 	.container .projects a{
 		position: relative;
 		top:30%;
-		border: 1px solid blue;
+		/*border: 1px solid blue;*/
 		font-size: 15px;
 		font-weight: bold;
 
@@ -380,7 +384,7 @@
 		background-size: 100px;
 
 		margin: 0 auto;
-		border: 1px solid rgb(251,236,93);
+		/*border: 1px solid rgb(251,236,93);*/
 		width:100px;
 		height: 100px;
 		margin-bottom: 20px;
@@ -405,7 +409,7 @@
 	.container .contact a{
 		position: relative;
 		top:30%;
-		border: 1px solid blue;
+		/*border: 1px solid blue;*/
 		font-size: 15px;
 		font-weight: bold;
 
