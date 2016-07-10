@@ -106,13 +106,15 @@
 
 
 	function startTween(item) {
+
 			item_state =  item.data('angle')
 			// console.log(item.data('angle'));
 
-			if(item_state!=sz_state){
+			if(item_state!=sz_state){//if current hovered item does not align with sz
 				change = true;
 				console.log('change = true');
 
+				//change sz direction
 				if(sz_state=='vertical'){
 					sz_state = 'horizontal';
 				}
@@ -120,11 +122,22 @@
 					sz_state='vertical';
 				}
 				console.log('sz_state is now: '+ sz_state);
-				rot +=90;
+
+				var res = [-90, 90];//to randomize direction in which sz is turning
+				var result = res[Math.floor(Math.random()*res.length)];
+
+				rot +=result;
+				console.log('rot = ' + rot);
 			}	
 			else{
 				change = false;
-				rot = 0;
+
+				//sz will be turning but will not change direction
+				var res = [-180, 180];//to randomize direction in which sz is turning
+				var result = res[Math.floor(Math.random()*res.length)];
+
+				rot +=result;
+				// rot = 0;
 			}	
 			// var res = ['odd', 'even'];
 			// var result = res[Math.floor(Math.random()*res.length)];
