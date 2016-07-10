@@ -85,6 +85,11 @@
 
 <script type="text/javascript">
 	var rot = 0;
+	var sz_state = 'vertical'; /*SquadZero logo state (horizontal/vertical)*/
+	var item_state = ''; /*item hovered on state (horizontal/vertical)*/
+	var change = false; /*to know if sz has to turn or not*/
+
+
 	$(document).ready(function(){
 
 
@@ -101,23 +106,50 @@
 
 
 	function startTween(item) {
+			item_state =  item.data('angle')
+			// console.log(item.data('angle'));
 
-			console.log(item.data('angle'));
-			console.log('rot: '+ rot);
+			if(item_state!=sz_state){
+				change = true;
+				console.log('change = true');
 
-			var abs_angle = Math.abs(rot);
-			
-			var res = ['odd', 'even'];
-			var result = res[Math.floor(Math.random()*res.length)];
+				if(sz_state=='vertical'){
+					sz_state = 'horizontal';
+				}
+				else{
+					sz_state='vertical';
+				}
+				console.log('sz_state is now: '+ sz_state);
+				rot +=90;
+			}	
+			else{
+				change = false;
+				rot = 0;
+			}	
+			// var res = ['odd', 'even'];
+			// var result = res[Math.floor(Math.random()*res.length)];
 
-			switch(result) {
-			    case 'odd':
-			        rot-=90;
-			        break;
-			    case 'even':
-			        rot+=90;
-			        break;
-			}
+
+		// if(change == true){
+		// 	var res = [-90, 90];
+		// 	var result = res[Math.floor(Math.random()*res.length)];
+		// 	rot = result;
+
+		// 	// switch(sz_state) {
+		// 	//     case 'odd':
+		// 	//         rot=90;
+		// 	//         break;
+		// 	//     case 'even':
+		// 	//         rot=-90;
+		// 	//         break;
+		// 	//     default:
+		// 	//     	break;
+		// 	// }
+		// }	
+		// else{
+		// 	rot = 0;
+		// }
+
 
 		TweenLite.to($('.container #Layer_1'), 0.7, {
 			rotation:rot, transformOrigin:"50% 50%",
