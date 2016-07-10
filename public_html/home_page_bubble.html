@@ -86,12 +86,13 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 
-        $('.tg th.col_home').hover(function(){
+        $('.container .item').mouseenter(function(){
             console.log('hovered!!');
             // $('.tg td.col_about').css('margin-top', '-50px');
+            startTween();
         });
 
-		startTween();
+		
 
 	});
 
@@ -99,6 +100,11 @@
 
 	function startTween() {
 		console.log('starting tween');
+
+		TweenLite.to($('.container #Layer_1'), 1, {
+			rotation:90, transformOrigin:"50% 50%"
+
+		});
 
 	}
 
