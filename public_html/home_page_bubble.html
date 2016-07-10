@@ -3,6 +3,9 @@
 <head>
 	<title></title>
 	<script src="js/libs/jquery/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+	<!-- <script src="js/libs/vendor/"></script> -->
+
 </head>
 <body>
 <!-- 	<div class="container">
@@ -26,6 +29,7 @@
 			<a>CONTACT</a>
 		</div>		
 	</div> -->
+
 	<div class="container">
 		<table class="tg">
 		  <tr>
@@ -45,7 +49,18 @@
 		    </td>
 		    <td class="tg-yw4l circle">
 		    	<div class="circle_img">
-		    		SQUAD ZERO
+		    		
+
+		    		<div class="ess"><?xml version="1.0" encoding="utf-8"?>
+
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							 viewBox="0 0 1024 768" enable-background="new 0 0 1024 768" xml:space="preserve">
+						<line fill="none" stroke="#FFDA45" stroke-width="60" stroke-miterlimit="10" x1="512" y1="30.7" x2="512" y2="730.7"/>
+						<line fill="none" stroke="#FFDA45" stroke-width="60" stroke-miterlimit="10" x1="485.3" y1="54" x2="806.7" y2="54"/>
+						<line fill="none" stroke="#FFDA45" stroke-width="60" stroke-miterlimit="10" x1="216" y1="707.3" x2="537.3" y2="707.3"/>
+						<circle fill="none" stroke="#FFDA45" stroke-width="60" stroke-miterlimit="10" cx="512" cy="380.7" r="135.3"/>
+					</svg>
+					</div>
 		    	</div>
 		    </td>
 		    <td class="tg-yw4l col_projects">
@@ -66,6 +81,30 @@
 		</table>
 	</div>
 </body>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+        $('.tg th.col_home').hover(function(){
+            console.log('hovered!!');
+            // $('.tg td.col_about').css('margin-top', '-50px');
+        });
+
+		startTween();
+
+	});
+
+
+
+	function startTween() {
+		console.log('starting tween');
+
+	}
+
+</script>
+
+
 <style type="text/css">
 
 	body {
@@ -81,7 +120,22 @@
 
 
 	}
+	.container .ess { 
+		/*margin: 0 auto;*/
+		font-size: 20px;
+		width: 200px;
+		height: 270px;
+		color: white;
 
+	}
+
+	.container .ess > #Layer_1 { 
+		/*margin: 0 auto;*/
+		display: block;
+
+
+
+	}
 	.container .circle {
 		width: 200px;
 		height: 380px;
@@ -413,16 +467,4 @@
 
 
 </style>
-
-<script type="text/javascript">
-	$(document).ready(function(){
-
-        $('.tg th.col_home').hover(function(){
-            console.log('hovered!!');
-            // $('.tg td.col_about').css('margin-top', '-50px');
-        });
-
-	});
-
-</script>
 </html>
