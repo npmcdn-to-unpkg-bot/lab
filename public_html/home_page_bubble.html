@@ -84,7 +84,9 @@
 
 
 <script type="text/javascript">
+	var rot = 0;
 	$(document).ready(function(){
+
 
         $('.container .item').mouseenter(function(){
             console.log('hovered!!');
@@ -101,8 +103,21 @@
 	function startTween() {
 		console.log('starting tween');
 
-		TweenLite.to($('.container #Layer_1'), 1, {
-			rotation:90, transformOrigin:"50% 50%"
+			var res = ['odd', 'even'];
+			var result = res[Math.floor(Math.random()*res.length)];
+
+			switch(result) {
+			    case 'odd':
+			        rot-=90;
+			        break;
+			    case 'even':
+			        rot+=90;
+			        break;
+			}
+
+		TweenLite.to($('.container #Layer_1'), 0.7, {
+			rotation:rot, transformOrigin:"50% 50%",
+			ease: Bounce.easeOut
 
 		});
 
