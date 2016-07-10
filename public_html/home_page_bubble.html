@@ -51,7 +51,7 @@
 		    	<div class="circle_img">
 		    		
 
-		    		<div class="ess"><?xml version="1.0" encoding="utf-8"?>
+		    		
 
 					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 							 viewBox="0 0 1024 768" enable-background="new 0 0 1024 768" xml:space="preserve">
@@ -60,7 +60,7 @@
 						<line fill="none" stroke="#FFDA45" stroke-width="60" stroke-miterlimit="10" x1="216" y1="707.3" x2="537.3" y2="707.3"/>
 						<circle fill="none" stroke="#FFDA45" stroke-width="60" stroke-miterlimit="10" cx="512" cy="380.7" r="135.3"/>
 					</svg>
-					</div>
+					
 		    	</div>
 		    </td>
 		    <td class="tg-yw4l col_projects">
@@ -123,17 +123,24 @@
 	.container .ess { 
 		/*margin: 0 auto;*/
 		font-size: 20px;
-		width: 200px;
-		height: 270px;
+		position: relative;
 		color: white;
 
 	}
+	.container .circle_img {
+		position: relative;
+	}
 
-	.container .ess > #Layer_1 { 
-		/*margin: 0 auto;*/
-		display: block;
+	.container  #Layer_1 { 
 
+	    position: absolute;
+	    top: 50%;  /* position the top  edge of the element at the middle of the parent */
+	    left: 50%; /* position the left edge of the element at the middle of the parent */
 
+	    transform: translate(-50%, -50%); /* This is a shorthand of
+	                                         translateX(-50%) and translateY(-50%) */
+		width: 200px;
+		height: 250px;
 
 	}
 	.container .circle {
