@@ -100,19 +100,44 @@
             startTween($(this));
         });
 
+	      window.requestAnimFrame = (function(callback) {
+	        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+	        function(callback) {
+	          window.setTimeout(callback, 1000 / 60);
+	        };
+	      })();
+
+
+
 		var c = document.getElementById("myCanvas");
 		var ctx = c.getContext("2d");
+		var ctx2 = c.getContext("2d");
 		ctx.lineWidth = 5;
 		// ctx.moveTo(200,0);
 		// ctx.lineTo(0,100);
 		ctx.moveTo(0, 100);
 		ctx.strokeStyle = '#ff0000';
-		ctx.stroke();	
 		var t = 0;
 		ctx.beginPath();
 		ctx.strokeStyle = '#ff0000';
-		var draw = setInterval(function(){
 
+		ctx2.lineWidth = 5;
+		ctx2.moveTo(70, 200);
+		ctx2.beginPath();
+		ctx2.strokeStyle = 'gray';
+		
+		
+		
+		ctx2.lineTo(0,100);
+		ctx2.stroke();
+
+        // request new frame
+        // requestAnimFrame(function() {
+         
+        // });
+
+		// var draw = setInterval(function(){
+		var draw = function(){
 			console.log("stroking");
 			ctx.strokeStyle = 'yellow';
 			var rand_y =Math.floor((Math.random() * 100) + 1);
@@ -124,11 +149,18 @@
 			if(t<150){
 			ctx.lineTo(t,y);
 			ctx.stroke();
+				requestAnimFrame(function() {
+	         		draw();
+	        	});
 			}	
 			else{
-				clearInterval(draw);
+				// clearInterval(draw);
 			}
-		},10);	
+
+		// },10);	
+		}
+
+		draw();
 
 	});
 
