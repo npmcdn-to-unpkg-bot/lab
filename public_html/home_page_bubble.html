@@ -270,9 +270,9 @@
 			t+=0.5;
 
 
-			var y = calculate_y2(z);
+			var y = calculate_y2(z, 50);
 			console.log("z = " + z);
-			var y2 = calculate_y(t);
+			var y2 = calculate_y(t, 100);
 			console.log("t = " + t);
 
 
@@ -344,18 +344,19 @@
 
 	});
 
-	function calculate_y(x){
+	function calculate_y(x, slope){
 		var y=0;
+		
 
-		y = ((-1/2)*x) + 100;
+		y = ((-1/2)*x) + slope;
 		console.log("y= " + y);
 		return y;
 	}
 
-	function calculate_y2(x){
+	function calculate_y2(x, slope){
 		var y=0;
 
-		y = ((-1/2)*x) + 50;
+		y = ((-1/2)*x) + slope;
 		console.log("y= " + y);
 		return y;
 	}
