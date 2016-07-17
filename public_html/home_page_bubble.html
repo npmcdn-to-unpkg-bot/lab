@@ -278,27 +278,12 @@
 
 			
 			// ctx.fillRect(x,50,1,1); // fill in the pixel at (10,10)
-			if(z>0){
+			if((z>0) || (t<200)){
 
-				// 	ctx.beginPath();
-				// 	ctx.strokeStyle = 'blue';
-				// 	ctx.moveTo(0,0);
-				// 	ctx.lineTo(100,100);
-				// 	ctx.closePath();
-				// ctx.clearRect(0, 0, c.width, c.height);
-				// ctx.beginPath();
-				// // ctx.beginPath();
-				// ctx.lineTo(z,y);
-				// // ctx.closePath();
-				// ctx.stroke();
-				// ctx.closePath();
-		  //       // ctx.restore();
-		  //       // draw();
-
-
+				/*clear everything before first*/
 		        ctx.clearRect(0, 0, c.width, c.height);
 
-
+		        /*blue line movement*/
 		        ctx.strokeStyle = "blue";
 		        ctx.beginPath();
 		        ctx.moveTo(100,0);
@@ -308,7 +293,7 @@
 				ctx.closePath();
 
 
-
+		        /*yellow line movement*/
 				ctx.strokeStyle = "yellow";
 		        ctx.beginPath();
 		        ctx.moveTo(0,100);
