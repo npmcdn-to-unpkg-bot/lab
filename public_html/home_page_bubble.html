@@ -267,8 +267,15 @@
 
 			var rand_y =Math.floor((Math.random() * 100) + 1);
 			z-=0.5;
+			t+=0.5;
+
+
 			var y = calculate_y2(z);
 			console.log("z = " + z);
+			var y2 = calculate_y(t);
+			console.log("t = " + t);
+
+
 			
 			// ctx.fillRect(x,50,1,1); // fill in the pixel at (10,10)
 			if(z>0){
@@ -304,8 +311,8 @@
 
 				ctx.strokeStyle = "yellow";
 		        ctx.beginPath();
-		        ctx.moveTo(200,0);
-		        ctx.lineTo(z,100);
+		        ctx.moveTo(0,100);
+		        ctx.lineTo(t,y2);
 				// ctx.closePath();
 				ctx.stroke();
 				ctx.closePath();
