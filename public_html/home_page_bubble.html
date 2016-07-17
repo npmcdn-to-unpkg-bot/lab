@@ -121,19 +121,31 @@
 		// ctx.moveTo(0, 100);
 		// ctx.strokeStyle = '#ff0000';
 		var t = 0;
-		var z = 200;
+		var z = 100;
 		
 		// ctx.strokeStyle = '#ff0000';
 
-		ctx.beginPath();
-		ctx.moveTo(70, 0);
+		// ctx.beginPath();
+		// ctx.moveTo(70, 0);
 
-		ctx.strokeStyle = 'blue';
-		ctx.lineTo(0,100);
+		// ctx.strokeStyle = 'yellow';
+		// ctx.lineTo(0,100);
 		
-		ctx.closePath();
-		ctx.stroke();
-		ctx.beginPath();
+		// ctx.closePath();
+		// ctx.stroke();
+		
+
+
+		// 	ctx.beginPath();
+		// 	ctx.strokeStyle = 'blue';
+		// 	ctx.moveTo(0,0);
+		// 	ctx.lineTo(100,100);
+		// 	ctx.closePath();
+
+
+
+
+			// ctx.beginPath();
 		// ctx2.beginPath();
         // request new frame
         // requestAnimFrame(function() {
@@ -142,14 +154,15 @@
 		// ctx.beginPath();
 		// var draw = setInterval(function(){
 
-		// var ctx2 = c.getContext("2d");
-		// ctx2.lineWidth = 5;
 
 
 
 		var draw = function(){
+			// ctx.beginPath();
+			ctx.restore();
 			console.log("stroking");
 			ctx.strokeStyle = 'yellow';
+			// ctx2.strokeStyle = 'grey';
 			// ctx2.strokeStyle = 'red';
 			var rand_y =Math.floor((Math.random() * 100) + 1);
 
@@ -160,9 +173,16 @@
 			console.log("t = " + t);
 			
 			// ctx.fillRect(x,50,1,1); // fill in the pixel at (10,10)
-			if(t<150){
+			if((t<150) ){
+
+				
+			// ctx2.lineTo(z,y);	
+			// ctx2.stroke();
+			
 			ctx.lineTo(t,y);
+			// ctx.closePath();
 			ctx.stroke();
+
 				requestAnimFrame(function() {
 	         		draw();
 	        	});
@@ -188,8 +208,13 @@
 		}
 
 		var draw2 = function(){
+
+			// draw();
+			// ctx.beginPath();
+		ctx.restore();
+
 			console.log("stroking");
-			ctx.strokeStyle = 'yellow';
+			ctx.strokeStyle = 'gray';
 			var rand_y =Math.floor((Math.random() * 100) + 1);
 			z-=0.5;
 			var y = calculate_y2(z);
@@ -197,28 +222,133 @@
 			
 			// ctx.fillRect(x,50,1,1); // fill in the pixel at (10,10)
 			if(z>0){
+				// ctx.beginPath();
 				ctx.lineTo(z,y);
+				// ctx.closePath();
 				ctx.stroke();
 					requestAnimFrame(function() {
 		         		draw2();
 		        	});
+		        // ctx.restore();
+		        // draw();
 			}	
 			else{
-				// clearInterval(draw);
-				ctx.closePath();
-				ctx.beginPath();
+				// ctx.closePath();
+				// ctx.beginPath();
 
 
-				draw();
+				// draw();
 			}
 
 		// },10);	
 		}
 
+		var o = 0;
+		var ctx2 = c.getContext("2d");
 
+
+		
+		var draw3 = function(){
+
+			console.log("drawing " + ctx);
+			o++;
+			// ctx.strokeStyle = 'red';
+			
+			// ctx.beginPath();
+			// ctx.moveTo(0,100);
+			// ctx.lineTo(100,100);
+			// ctx.stroke();
+			// ctx.closePath();
+
+
+			
+
+
+
+			var rand_y =Math.floor((Math.random() * 100) + 1);
+			z-=0.5;
+			var y = calculate_y2(z);
+			console.log("z = " + z);
+			
+			// ctx.fillRect(x,50,1,1); // fill in the pixel at (10,10)
+			if(z>0){
+
+				// 	ctx.beginPath();
+				// 	ctx.strokeStyle = 'blue';
+				// 	ctx.moveTo(0,0);
+				// 	ctx.lineTo(100,100);
+				// 	ctx.closePath();
+				// ctx.clearRect(0, 0, c.width, c.height);
+				// ctx.beginPath();
+				// // ctx.beginPath();
+				// ctx.lineTo(z,y);
+				// // ctx.closePath();
+				// ctx.stroke();
+				// ctx.closePath();
+		  //       // ctx.restore();
+		  //       // draw();
+
+
+		        ctx.clearRect(0, 0, c.width, c.height);
+
+
+		        ctx.strokeStyle = "blue";
+		        ctx.beginPath();
+		        ctx.moveTo(100,0);
+		        ctx.lineTo(z,y);
+				// ctx.closePath();
+				ctx.stroke();
+				ctx.closePath();
+
+
+
+				ctx.strokeStyle = "yellow";
+		        ctx.beginPath();
+		        ctx.moveTo(200,0);
+		        ctx.lineTo(z,100);
+				// ctx.closePath();
+				ctx.stroke();
+				ctx.closePath();
+
+		        requestAnimFrame(function() {
+			        draw3();
+			    });	
+			}	
+			else{
+				// ctx.closePath();
+				// ctx.beginPath();
+
+
+				// draw();
+			}
+
+			// ctx.clearRect(0, 0, c.width, c.height);
+			// ctx.beginPath();
+			// ctx.lineTo(0,100);
+			// // ctx.closePath();
+			// ctx.stroke();
+			// ctx.closePath();
+
+
+
+			console.log("o = "+ o);
+
+			
+
+		}
+
+
+
+		setTimeout(function(){
+			// ctx.beginPath();
+			ctx.strokeStyle = 'red';
+			// ctx.moveTo(0,100);
+			draw3();
+		},2000);
+		// draw3();
 		// draw();
 
-		draw2();
+		// draw2();
 
 	});
 
