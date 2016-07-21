@@ -247,6 +247,8 @@
 		var ctx2 = c.getContext("2d");
 
 
+		//
+		var line1 = new Line(0, 100, 200, 0, "up");
 		
 		var draw3 = function(){
 
@@ -296,7 +298,7 @@
 		        /*yellow line movement*/
 				ctx.strokeStyle = "yellow";
 		        ctx.beginPath();
-		        ctx.moveTo(0,100);
+		        ctx.moveTo(line1.initial_x ,line1.initial_y);
 		        ctx.lineTo(t,y2);
 				// ctx.closePath();
 				ctx.stroke();
@@ -344,13 +346,33 @@
 
 	});
 
+	var canvas_width = c.width,
+		canvas_height = c.height;
+
+	//if we want two lines, we have to divide canvas by four
+	//if we want four lines, we have to divide canvas by 8
+	//etc.
+	//if the number of lines needed is odd, middle line is not needed
+	
+	//this will be the array containing all lines' x (horizontal)
+	var lines = [];
 
 
-	function Line(initial_x, initial_y, direction) {
+	//this is the line object 
+	function Line(initial_x, initial_y, final_x, final_y,  direction) {
 	  this.initial_x = initial_x;
 	  this.initial_y = initial_y;
 	  this.direction = direction;
+	  this.final_x = final_x;
+	  this.final_y = final_y;
 	}
+
+	function initLines(){
+		var line1 = new Line();
+
+	}
+
+
 
 	function calculate_y(x, slope){
 		var y=0;
