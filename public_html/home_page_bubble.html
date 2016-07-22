@@ -359,12 +359,13 @@
 
 
 	//this is the line object 
-	function Line(initial_x, initial_y, final_x, final_y,  direction) {
+	function Line(initial_x, initial_y, final_x, final_y, slope,  direction) {
 	  this.initial_x = initial_x;
 	  this.initial_y = initial_y;
 	  this.direction = direction;
 	  this.final_x = final_x;
 	  this.final_y = final_y;
+	  this.slope = slope;
 	}
 
 	function initLines(){
@@ -372,9 +373,18 @@
 		// a line has to be drawn according to its y 
 		// because the y line is greater than the x line 
 		// so its maximum value is greater too 
+		// it's necessary then to find the x value 
+		// corresponding to the final y (maximum)
 
+		ctx.beginPath();
+		ctx.moveTo(line1.initial_x ,line1.initial_y);
+		
+		calculate_y(line1.final_x, slope);
+		ctx.lineTo(t,y2);
+
+		ctx.stroke();
+		ctx.closePath();		
 	}
-
 
 
 	function calculate_y(x, slope){
