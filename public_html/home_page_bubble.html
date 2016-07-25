@@ -124,7 +124,7 @@
 
 
 		
-		var line1 = new Line(0, 100, 200, 0, "up");
+		var line1 = new Line(0, 100, 100, 200, 100, "up");
 		
 		var draw3 = function(){
 
@@ -138,15 +138,11 @@
 			// ctx.stroke();
 			// ctx.closePath();
 
-
-			
-
-
-
 			var rand_y =Math.floor((Math.random() * 100) + 1);
 			z-=0.5;
 			t+=0.5;
 
+			console.log("line slope: "+  line1.slope);
 
 			var y = calculate_y2(z, 50);
 			console.log("z = " + z);
@@ -164,6 +160,7 @@
 		        /*blue line movement*/
 		        ctx.strokeStyle = "blue";
 		        ctx.beginPath();
+		        /*initial blue line position (x,y)*/
 		        ctx.moveTo(100,0);
 		        ctx.lineTo(z,y);
 				// ctx.closePath();
@@ -185,40 +182,18 @@
 			    });	
 			}	
 			else{
-				// ctx.closePath();
-				// ctx.beginPath();
 
-
-				// draw();
 			}
-
-			// ctx.clearRect(0, 0, c.width, c.height);
-			// ctx.beginPath();
-			// ctx.lineTo(0,100);
-			// // ctx.closePath();
-			// ctx.stroke();
-			// ctx.closePath();
-
-
-
 			console.log("o = "+ o);
-
-			
-
 		}
 
 		// initLines();
 
 		setTimeout(function(){
-			// ctx.beginPath();
-			// ctx.strokeStyle = 'red';
-			// ctx.moveTo(0,100);
+
 			draw3();
 		},2000);
-		// draw3();
-		// draw();
 
-		// draw2();
 
 
 	});
@@ -240,20 +215,20 @@
 
 
 	//this is the line object 
-	function Line(initial_x, initial_y, final_x, final_y, slope,  direction) {
+	function Line(initial_x, initial_y, final_x, final_y, constant,  direction) {
 	  this.initial_x = initial_x;
 	  this.initial_y = initial_y;
 	  this.direction = direction;
 	  this.final_x = final_x;
 	  this.final_y = final_y;
-	  this.slope = slope;
+	  this.constant = constant;
 	}
 
 
 	function initLines(){
 
 		console.log('intiLines');
-		var line1 = new Line(50, 100, 200,100, 70, 'up');
+		var line1 = new Line(50, 100, 200,100, 50, 'up');
 		ctx.strokeStyle = "red";
 		// a line has to be drawn according to its y 
 		// because the y line is greater than the x line 
@@ -272,19 +247,19 @@
 	}
 
 
-	function calculate_y(x, slope){
+	function calculate_y(x, constant){
 		var y=0;
 		
 
-		y = ((-1/2)*x) + slope;
+		y = ((-1/2)*x) + constant;
 		console.log("y= " + y);
 		return y;
 	}
 
-	function calculate_y2(x, slope){
+	function calculate_y2(x, constant){
 		var y=0;
 
-		y = ((-1/2)*x) + slope;
+		y = ((-1/2)*x) + constant;
 		console.log("y= " + y);
 		return y;
 	}
