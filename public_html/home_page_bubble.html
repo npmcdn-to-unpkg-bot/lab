@@ -124,7 +124,7 @@
 
 
 		
-		var line1 = new Line(0, 100, 100, 200, 100, "up");
+		var line1 = new Line(0, 70, 100, 200, 70, "up");
 		
 		var draw3 = function(){
 
@@ -142,11 +142,11 @@
 			z-=0.5;
 			t+=0.5;
 
-			console.log("line slope: "+  line1.slope);
+			console.log("line constant: "+  line1.constant);
 
 			var y = calculate_y2(z, 50);
 			console.log("z = " + z);
-			var y2 = calculate_y(t, 100);
+			var y2 = calculate_y(t, line1.constant);
 			console.log("t = " + t);
 
 
