@@ -129,7 +129,10 @@
 
 		//					V                              V
 		// Line(initial_x, initial_y, final_x, final_y, constant,  direction)
-		var line2 = new Line(100, 0, 0, 50, 50, "down");
+		// var line2 = new Line(100, 0, 0, 50, 50, "down");
+
+		var line2 = new Line(100, 0, 0, 70, 50, "down");
+
 		// if(line1.){
 
 		// }
@@ -269,6 +272,12 @@
 		y = ((-1/2)*x) + constant;
 		console.log("y= " + y);
 		return y;
+	}
+
+	function calculate_x(y, b){
+		var x = (y-b)/y;
+
+		return x; 
 	}
 
 
