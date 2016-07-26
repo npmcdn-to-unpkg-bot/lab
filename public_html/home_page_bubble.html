@@ -123,9 +123,14 @@
 		var ctx2 = c.getContext("2d");
 
 
+		//					V                              v
+		// Line(initial_x, initial_y, final_x, final_y, constant,  direction)
+		var line1 = new Line(0, 60, 100, 200, 60, "up");
 		
-		var line1 = new Line(0, 70, 100, 200, 70, "up");
-		
+		var line2 = new Line(100, 0, 0, 50, 50, "down");
+		// if(line1.){
+
+		// }
 		var draw3 = function(){
 
 			console.log("drawing " + ctx);
@@ -144,7 +149,7 @@
 
 			console.log("line constant: "+  line1.constant);
 
-			var y = calculate_y2(z, 50);
+			var y = calculate_y2(z, line2.constant);
 			console.log("z = " + z);
 			var y2 = calculate_y(t, line1.constant);
 			console.log("t = " + t);
