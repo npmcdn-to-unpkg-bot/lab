@@ -172,6 +172,7 @@
 		        ctx.beginPath();
 		        /*initial blue line position (x,y)*/
 		        ctx.moveTo(line2.initial_x,line2.initial_y);
+
 		        ctx.lineTo(z,y);
 				// ctx.closePath();
 				ctx.stroke();
@@ -260,6 +261,7 @@
 	function calculate_y(x, constant){
 		var y=0;
 		
+		// var slope = calculate_slope();
 
 		y = ((-1/2)*x) + constant;
 		console.log("y= " + y);
@@ -279,10 +281,10 @@
 
 		return x; 
 	}
-	function calculate(initial_x, initial_y, final_x, final_y, constant){
-		var slope = (final_y - initial_y)/ (final_x - final_y);
+	function calculate_slope(initial_x, initial_y, final_x, final_y, constant){
+		var slope = (final_y - initial_y)/ (final_x - initial_x);
 
-		
+		return slope;
 	}
 
 
