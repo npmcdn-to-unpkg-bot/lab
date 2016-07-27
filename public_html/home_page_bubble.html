@@ -285,8 +285,8 @@
 		return y;
 	}
 
-	function calculate_x(y, b){
-		var x = (y-b)/y;
+	function calculate_x(y, constant, slope){
+		var x = (y-constant)/slope;
 
 		return x; 
 	}
