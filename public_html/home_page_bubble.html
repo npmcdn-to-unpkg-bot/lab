@@ -127,11 +127,17 @@
 		// Line(initial_x, initial_y, final_x, final_y, constant,  direction)
 		var line1 = new Line(0, 60, 100, 200, 60, "up");
 
+		var slope1 = calculate_slope(0, 60, 100, 200);
+		console.log("slope: "+ slope1);
 		//					V                              V
 		// Line(initial_x, initial_y, final_x, final_y, constant,  direction)
 		// var line2 = new Line(100, 0, 0, 50, 50, "down");
 
 		var line2 = new Line(100, 0, 0, 70, 50, "down");
+
+
+
+
 
 		// if(line1.){
 
@@ -240,6 +246,8 @@
 
 		console.log('intiLines');
 		var line1 = new Line(50, 100, 200,100, 50, 'up');
+
+
 		ctx.strokeStyle = "red";
 		// a line has to be drawn according to its y 
 		// because the y line is greater than the x line 
@@ -281,7 +289,7 @@
 
 		return x; 
 	}
-	function calculate_slope(initial_x, initial_y, final_x, final_y, constant){
+	function calculate_slope(initial_x, initial_y, final_x, final_y){
 		var slope = (final_y - initial_y)/ (final_x - initial_x);
 
 		return slope;
