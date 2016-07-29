@@ -139,7 +139,7 @@
 
 
 
-		var line3 = new Line(0, 10, 150, 10);//(0, 80, 100, 0, 80, "up");
+		var line3 = new Line(0, 40, 150, 10);//(0, 80, 100, 0, 80, "up");
 		// var slope3 = calculate_slope(0, 80, 50, 0);
 		var slope3 = calculate_slope(line3.initial_x, line3.initial_y, line3.final_x, line3.final_y);
 
@@ -153,9 +153,9 @@
 
 
 
-		// initGreen();
+		initGreen();
 		setInterval(function(){
-			drawGreen();
+			// drawGreen();
 		}, 100);
 
 
@@ -166,8 +166,8 @@
 
 		var drawGreen = function(){
 
-			/*constant is the value if y where it starts*/
-			var y3 =  calculate_y_slope(g, 10, slope3);
+			/*constant is the value if y where it starts (initial_y)*/
+			var y3 =  calculate_y_slope(g, 40, slope3);
 			ctx.beginPath();
 			ctx.moveTo(line3.initial_x ,line3.initial_y);
 			ctx.lineTo(g,y3);
