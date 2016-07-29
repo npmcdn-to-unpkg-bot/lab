@@ -145,7 +145,7 @@
 
 		console.log("slope3: "+ slope3);
 
-		var slope3_rev = calculate_slope(100, 0, 0, 80);
+		var slope3_rev = calculate_slope(150, 10, 0, 20);
 		console.log("slope3_rev: "+ slope3_rev);		
 
 
@@ -162,19 +162,19 @@
 
 		//g value is initial x coordinate of line (line3 in this case)
 		var g = 0;
-		var g_rev = 100;
+		var g_rev = 150;
 
 		var drawGreen = function(){
 
 			/*constant is the value if y where it starts (initial_y)*/
-			var y3 =  calculate_y_slope(g, line3.initial_y, slope3);
-			ctx.beginPath();
-			ctx.moveTo(line3.initial_x ,line3.initial_y);
-			ctx.lineTo(g,y3);
-			ctx.stroke();
-			ctx.closePath();		
+			// var y3 =  calculate_y_slope(g, line3.initial_y, slope3);
+			// ctx.beginPath();
+			// ctx.moveTo(line3.initial_x ,line3.initial_y);
+			// ctx.lineTo(g,y3);
+			// ctx.stroke();
+			// ctx.closePath();		
 
-			g+=0.5;
+			// g+=0.5;
 
 
 
@@ -182,14 +182,14 @@
 
 			/*REverse drawing*/
 
-			// var y3_rev =  calculate_y_slope(g_rev, 80, slope3_rev);
-			// ctx.beginPath();
-			// ctx.moveTo(line3.final_x ,line3.final_y);
-			// ctx.lineTo(g_rev,y3_rev);
-			// ctx.stroke();
-			// ctx.closePath();		
+			var y3_rev =  calculate_y_slope(g_rev, line3.initial_y, slope3_rev);
+			ctx.beginPath();
+			ctx.moveTo(line3.final_x ,line3.final_y);
+			ctx.lineTo(g_rev,y3_rev);
+			ctx.stroke();
+			ctx.closePath();		
 
-			// g_rev-=0.5;
+			g_rev-=0.5;
 
 
 
