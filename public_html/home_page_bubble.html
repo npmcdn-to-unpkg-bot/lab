@@ -161,8 +161,8 @@
 
 
 		//g value is initial x coordinate of line (line3 in this case)
-		var g = 0;
-		var g_rev = 150;
+		var g = line3.initial_x;
+		var g_rev = line3.final_x;
 
 		var drawGreen = function(){
 
@@ -181,7 +181,7 @@
 
 
 			/*REverse drawing*/
-
+			//to calculate rope we have to take final x coordinate of line  (g_rev)
 			var y3_rev =  calculate_y_slope(g_rev, line3.initial_y, slope3_rev);
 			ctx.beginPath();
 			ctx.moveTo(line3.final_x ,line3.final_y);
