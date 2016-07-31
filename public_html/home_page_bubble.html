@@ -154,8 +154,8 @@
 		ctx.strokeStyle = "green";
 
 
-
-		initGreen();
+		initLines();
+		// initGreen();
 		setInterval(function(){
 			// drawGreen();
 		}, 100);
@@ -209,21 +209,24 @@
 
 		}
 
-		var lines = [];
+		
 
 		function initLines(){
+			var lines = [];
 			for (var i = 0; i < 3; i++) {
 				var initial_y = line3.initial_y + (i*5);
 				var final_y = line3.final_y + (i*5);
 
-				lines[i] = new Line(line3.initial_x,initial_y,line3.final_x, line3.final_y);
+				var theline = new Line(line3.initial_x,initial_y,line3.final_x, final_y, 0, "up");
 
+				// lines.push(theline);
 
-				ctx.beginPath();
-				ctx.moveTo(lines[i].initial_x ,lines[i].initial_y);
-				ctx.lineTo(lines[i].final_x ,lines[i].final_y);
-				ctx.stroke();
-				ctx.closePath();	
+				lines[i] = theline;
+				// ctx.beginPath();
+				// ctx.moveTo(lines[i].initial_x ,lines[i].initial_y);
+				// ctx.lineTo(lines[i].final_x ,lines[i].final_y);
+				// ctx.stroke();
+				// ctx.closePath();	
 
 			}
 
