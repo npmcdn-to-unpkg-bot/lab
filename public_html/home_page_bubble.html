@@ -222,15 +222,35 @@
 				// lines.push(theline);
 
 				lines[i] = theline;
+
+
 				ctx.beginPath();
 				ctx.moveTo(lines[i].initial_x ,lines[i].initial_y);
 				ctx.lineTo(lines[i].final_x ,lines[i].final_y);
 				ctx.stroke();
 				ctx.closePath();	
 
+
+
+
+
 			}
 
 
+		}
+
+		var g3 = 0;
+		
+		function draw_3_green(lines){
+
+			var slope = calculate_slope(lines.initial_x, lines.initial_y, lines.final_x, lines.final_y);
+			var y =  calculate_y_slope(lines.initial_x, lines.initial_y, slope);
+			ctx.beginPath();
+
+			ctx.moveTo(lines.initial_x ,lines.initial_y);
+			ctx.lineTo(g3,y);
+			ctx.stroke();
+			ctx.closePath();	
 		}
 
 		// if(line1.){
