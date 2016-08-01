@@ -210,7 +210,7 @@
 		}
 
 		
-
+		
 		function initLines(){
 			var lines = [];
 			for (var i = 0; i < 3; i++) {
@@ -224,33 +224,45 @@
 				lines[i] = theline;
 
 
-				ctx.beginPath();
-				ctx.moveTo(lines[i].initial_x ,lines[i].initial_y);
-				ctx.lineTo(lines[i].final_x ,lines[i].final_y);
-				ctx.stroke();
-				ctx.closePath();	
+
+				/********Drawing the lines*********/
+				// ctx.beginPath();
+				// ctx.moveTo(lines[i].initial_x ,lines[i].initial_y);
+				// ctx.lineTo(lines[i].final_x ,lines[i].final_y);
+				// ctx.stroke();
+				// ctx.closePath();	
 
 
 
 
 
 			}
+			console.log();
+			// draw_3_green(lines);
 
 
 		}
 
 		var g3 = 0;
-		
+
 		function draw_3_green(lines){
+			console.log("lines: " + lines);
+			for (var i = 0; i < 3; i++) {
+				// var slope = calculate_slope(lines[i].initial_x, lines[i].initial_y, lines[i].final_x, lines[i].final_y);
+				// var y =  calculate_y_slope(lines[i].initial_x, lines[i].initial_y, slope);
+				// ctx.beginPath();
 
-			var slope = calculate_slope(lines.initial_x, lines.initial_y, lines.final_x, lines.final_y);
-			var y =  calculate_y_slope(lines.initial_x, lines.initial_y, slope);
-			ctx.beginPath();
+				// ctx.moveTo(lines[i].initial_x ,lines[i].initial_y);
+				// ctx.lineTo(g3,y);
+				// ctx.stroke();
+				ctx.closePath();	
+			}
 
-			ctx.moveTo(lines.initial_x ,lines.initial_y);
-			ctx.lineTo(g3,y);
-			ctx.stroke();
-			ctx.closePath();	
+			g3+=0.5;
+		    requestAnimFrame(function() {
+			        draw_3_green();
+			});	
+
 		}
 
 		// if(line1.){
