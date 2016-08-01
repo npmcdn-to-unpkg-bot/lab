@@ -237,8 +237,8 @@
 
 
 			}
-			console.log();
-			// draw_3_green(lines);
+			console.log('lines inside for loop: ' + lines);
+			draw_3_green(lines);
 
 
 		}
@@ -246,7 +246,7 @@
 		var g3 = 0;
 
 		function draw_3_green(lines){
-			console.log("lines: " + lines);
+			console.log("lines inside draw3: " + lines);
 			for (var i = 0; i < 3; i++) {
 				// var slope = calculate_slope(lines[i].initial_x, lines[i].initial_y, lines[i].final_x, lines[i].final_y);
 				// var y =  calculate_y_slope(lines[i].initial_x, lines[i].initial_y, slope);
@@ -259,9 +259,9 @@
 			}
 
 			g3+=0.5;
-		    requestAnimFrame(function() {
-			        draw_3_green();
-			});	
+		 //    requestAnimFrame(function() {
+			//         draw_3_green();
+			// });	
 
 		}
 
