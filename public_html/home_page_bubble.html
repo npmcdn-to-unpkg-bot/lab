@@ -259,7 +259,9 @@
 			// 	console.log("line: "+ line.initial_x);
 				var slope = calculate_slope(lines[i].initial_x, lines[i].initial_y, lines[i].final_x, lines[i].final_y);
 				console.log("slope of line: " + slope);
-				var y =  calculate_y_slope(lines[i].initial_x, lines[i].initial_y, slope);
+
+				//first param of calculate_y_slope is g3 NOT lines[i].initial_x
+				var y =  calculate_y_slope(g3, lines[i].initial_y, slope);
 
 				console.log("y value: " + y);
 				ctx.beginPath(); 
@@ -271,9 +273,9 @@
 			}
 
 			g3+=0.5;
-		    requestAnimFrame(function() {
-			        draw_3_green(lines);
-			});	
+		 //    requestAnimFrame(function() {
+			//         draw_3_green(lines);
+			// });	
 
 		}
 
