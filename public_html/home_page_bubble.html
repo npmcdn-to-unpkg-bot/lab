@@ -246,15 +246,22 @@
 		var g3 = 0;
 
 		function draw_3_green(lines){
-			console.log("lines inside draw3: " + lines);
-			for (var i = 0; i < 3; i++) {
-				// var slope = calculate_slope(lines[i].initial_x, lines[i].initial_y, lines[i].final_x, lines[i].final_y);
-				// var y =  calculate_y_slope(lines[i].initial_x, lines[i].initial_y, slope);
-				// ctx.beginPath();
+			console.log("lines inside draw3: " );
 
-				// ctx.moveTo(lines[i].initial_x ,lines[i].initial_y);
-				// ctx.lineTo(g3,y);
-				// ctx.stroke();
+
+			var str = JSON.stringify(lines, null, 4); // (Optional) beautiful indented output.
+			// console.log(lines[0]);
+			for (var i = 0; i < 3; i++) {
+				console.log(lines[i].initial_x);
+			// for (var line in lines) {
+			// 	console.log("line: "+ line.initial_x);
+				var slope = calculate_slope(lines[i].initial_x, lines[i].initial_y, lines[i].final_x, lines[i].final_y);
+				var y =  calculate_y_slope(lines[i].initial_x, lines[i].initial_y, slope);
+				ctx.beginPath();
+
+				ctx.moveTo(lines[i].initial_x ,lines[i].initial_y);
+				ctx.lineTo(g3,y);
+				ctx.stroke();
 				ctx.closePath();	
 			}
 
