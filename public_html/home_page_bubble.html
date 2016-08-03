@@ -213,7 +213,7 @@
 		
 		function initLines(){
 			var lines = [];
-			for (var i = 0; i < 3; i++) {
+			for (var i = 0; i < 6; i++) {
 				var initial_y = line3.initial_y + (i*10);
 				var final_y = line3.final_y + (i*10);
 
@@ -253,7 +253,7 @@
 
 			var str = JSON.stringify(lines, null, 4); // (Optional) beautiful indented output.
 			// console.log(lines[0]);
-			for (var i = 0; i < 2; i++) {
+			for (var i = 0; i < 6; i++) {
 				console.log(lines[i].initial_x);
 
 				var slope = calculate_slope(lines[i].initial_x, lines[i].initial_y, lines[i].final_x, lines[i].final_y);
