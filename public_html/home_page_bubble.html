@@ -246,17 +246,16 @@
 		}
 
 		var g3 = 0;
-
+		var g3_rev = 200;
 		function draw_3_green(lines){
 			console.log("lines inside draw3: " );
 
 
 			var str = JSON.stringify(lines, null, 4); // (Optional) beautiful indented output.
 			// console.log(lines[0]);
-			for (var i = 0; i < 3; i++) {
+			for (var i = 0; i < 2; i++) {
 				console.log(lines[i].initial_x);
-			// for (var line in lines) {
-			// 	console.log("line: "+ line.initial_x);
+
 				var slope = calculate_slope(lines[i].initial_x, lines[i].initial_y, lines[i].final_x, lines[i].final_y);
 				console.log("slope of line: " + slope);
 
@@ -270,9 +269,26 @@
 				ctx.lineTo(g3,y);
 				ctx.stroke();
 				ctx.closePath();	
+
+
+
+
+				/*REverse drawing*/
+				//to calculate rope we have to take final x coordinate of line  (g_rev)
+				var y3_rev =  calculate_y_slope(g3_rev, lines[i].initial_y, slope);
+				ctx.beginPath();
+				ctx.moveTo(lines[i].final_x ,lines[i].final_y);
+				ctx.lineTo(g3_rev,y3_rev);
+				ctx.stroke();
+				ctx.closePath();		
+
+				
 			}
 
 			g3+=0.5;
+
+			
+			g3_rev-=0.5;
 		 //    requestAnimFrame(function() {
 			//         draw_3_green(lines);
 			// });	
