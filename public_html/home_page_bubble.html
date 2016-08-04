@@ -110,6 +110,14 @@
 
 
 
+	     function tween_Load(){
+			TweenLite.to($('#myCanvas'), 0.7, {
+				rotation:rot, transformOrigin:"50% 50%",
+				ease: Bounce.easeOut
+
+			});
+
+	     }
 
 		// var ctx2 = c.getContext("2d");
 
@@ -549,7 +557,7 @@
 		position: absolute;
 		left: 500px;
 		top: 40px;
-		
+
 	}
 	.container {
 		margin: 0 auto;
