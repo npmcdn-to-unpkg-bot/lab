@@ -96,10 +96,17 @@
 
 
         $('.container .item').mouseenter(function(){
-            console.log('hovered!!');
+            // console.log('hovered!!');
             // $('.tg td.col_about').css('margin-top', '-50px');
             startTween($(this));
         });
+
+        $('.container .item').click(function(){
+            console.log('hovered!!');
+            // $('.tg td.col_about').css('margin-top', '-50px');
+            tween_Load();
+        });
+
 
 	      window.requestAnimFrame = (function(callback) {
 	        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
@@ -111,8 +118,9 @@
 
 
 	     function tween_Load(){
+	     	console.log("clicked");
 			TweenLite.to($('#myCanvas'), 0.7, {
-				rotation:rot, transformOrigin:"50% 50%",
+				autoAlpha: 1,
 				ease: Bounce.easeOut
 
 			});
