@@ -4,6 +4,8 @@
 	<title></title>
 	<script src="js/libs/jquery/jquery.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+	<script src="js/libs/gsap/TimelineLite.min.js"></script>
+
 	<!-- <script src="js/libs/vendor/"></script> -->
 
 </head>
@@ -120,11 +122,18 @@
 	     	console.log("clicked");
 	     	// $('#myCanvas').show();
 
-
-			TweenLite
+	     	 // $('#myCanvas').hide();
+	     	 var tl = new TimelineLite();
+			tl
 			// .to($('#myCanvas'), 0.7, {
 			// 	autoAlpha: 0
 			// })
+			.to($('#myCanvas'), 0.2, {
+				display: 'none'
+				// rotation:rot, transformOrigin:"50% 50%",
+				// ,ease: Bounce.easeOut
+
+			})
 			.to($('#myCanvas'), 0.2, {
 				display: 'block'
 				// rotation:rot, transformOrigin:"50% 50%",
