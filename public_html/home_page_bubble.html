@@ -321,17 +321,33 @@
 				
 			}
 
-			g3+=0.5;
 
+			var diff = lines[0].final_x - g3;
 
-			g3_rev-=0.5;
-
+			console.log("diff: " + diff);
 
 			console.log("g3: " + g3);
-			if(g3 < 180){
+
+
+			if((g3) && (diff > 0) ){
+				g3+=0.5;
+
+
+				g3_rev-=0.5;
 			    requestAnimFrame(function() {
 				        draw_3_green(lines);
 				});	
+		    }
+		    else {
+				// g3-=0.5;
+
+
+				// g3_rev+=0.5;
+			 //    requestAnimFrame(function() {
+				//         draw_3_green(lines);
+				// });	
+
+
 		    }
 		}
 
