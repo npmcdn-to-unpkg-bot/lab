@@ -122,19 +122,19 @@
 	     	console.log("clicked");
 	     	// $('#myCanvas').show();
 
-	     	 // $('#myCanvas').hide();
+	     	 $('#myCanvas').hide();
 	     	 var tl = new TimelineLite();
 			tl
 			// .to($('#myCanvas'), 0.7, {
 			// 	autoAlpha: 0
 			// })
-			.to($('#myCanvas'), 0.2, {
+			.to($('#myCanvas'), 1, {
 				display: 'none'
 				// rotation:rot, transformOrigin:"50% 50%",
 				// ,ease: Bounce.easeOut
 
 			})
-			.to($('#myCanvas'), 0.2, {
+			.to($('#myCanvas'), 1, {
 				display: 'block'
 				// rotation:rot, transformOrigin:"50% 50%",
 				// ,ease: Bounce.easeOut
@@ -183,7 +183,7 @@
 		console.log("slope3_rev: "+ slope3_rev);		
 
 
-		ctx.strokeStyle = "green";
+		ctx.strokeStyle = "yellow";
 
 
 		initLines();
@@ -323,9 +323,9 @@
 
 
 			g3_rev-=0.5;
-		 //    requestAnimFrame(function() {
-			//         draw_3_green(lines);
-			// });	
+		    requestAnimFrame(function() {
+			        draw_3_green(lines);
+			});	
 
 		}
 
@@ -581,7 +581,7 @@
 		position: absolute;
 		left: 500px;
 		top: 40px;
-		display: none;
+		/*display: none;*/
 
 	}
 	.container {
