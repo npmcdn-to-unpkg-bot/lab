@@ -186,6 +186,9 @@
 		ctx.strokeStyle = "yellow";
 
 
+		var g3 = 0;
+		var g3_rev = 300;//if this changes, final_x of line3 needs to change to the same value
+
 		initLines();
 		// initGreen();
 		setInterval(function(){
@@ -277,8 +280,7 @@
 
 		}
 
-		var g3 = 0;
-		var g3_rev = 300;//if this changes, final_x of line3 needs to change to the same value
+
 		function draw_3_green(lines){
 			console.log("lines inside draw3: " );
 
@@ -323,10 +325,14 @@
 
 
 			g3_rev-=0.5;
-		    requestAnimFrame(function() {
-			        draw_3_green(lines);
-			});	
 
+
+			console.log("g3: " + g3);
+			if(g3 < 180){
+			    requestAnimFrame(function() {
+				        draw_3_green(lines);
+				});	
+		    }
 		}
 
 		// if(line1.){
