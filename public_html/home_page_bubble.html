@@ -298,7 +298,7 @@
 				//first param of calculate_y_slope is g3 NOT lines[i].initial_x
 				var y =  calculate_y_slope(g3, lines[i].initial_y, slope);
 
-				console.log("y value: " + y);
+				// console.log("y value: " + y);
 
 				if(i%2 == 0 ){
 					ctx.beginPath(); 
@@ -339,11 +339,11 @@
 				reverse = false;	
 			}
 
-
+			console.log("reverse: "+ reverse);
 
 			if(reverse == false){
 				g3+=0.5;
-				
+
 
 				// g3_rev-=0.5;
 			    requestAnimFrame(function() {
