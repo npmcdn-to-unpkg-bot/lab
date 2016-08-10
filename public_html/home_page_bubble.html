@@ -180,7 +180,15 @@
 
 		//slope3_rev always uses opposite coordinates of slope3 object
 		var slope3_rev = calculate_slope(line3.final_x, line3.final_y, line3.initial_x, line3.initial_y);
-		console.log("slope3_rev: "+ slope3_rev);		
+		console.log("slope3_rev: "+ slope3_rev);	
+
+
+
+		var line_red = new Line(0, 20, 300, 10 );
+		var slope_red = calculate_slope(line_red.final_x, line_red.final_y, line_red.initial_x, line_red.initial_y);
+		console.log("slope_red: "+slope_red);	
+
+
 
 
 		ctx.strokeStyle = "yellow";
@@ -293,13 +301,17 @@
 				console.log(lines[i].initial_x);
 
 				var slope = calculate_slope(lines[i].initial_x, lines[i].initial_y, lines[i].final_x, lines[i].final_y);
+
+				var slope_red = calculate_slope(g3, lines[i].initial_y, lines[i].final_x, lines[i].final_y);
+
+
 				console.log("slope of line: " + slope);
 
 				//first param of calculate_y_slope is g3 NOT lines[i].initial_x
 				var y =  calculate_y_slope(g3, lines[i].initial_y, slope);
+ 
 
-
-				var y_red =  calculate_y_slope(g3, lines[i].final_y, slope);
+				var y_red =  calculate_y_slope(g3,lines[i].final_y, slope);
 				// console.log("y value: " + y);
 
 				if(i%2 == 0 ){
@@ -348,7 +360,7 @@
 
 
 				//this line is to display reversed lines 
-				// g3_rev-=0.5; 
+				g3_rev-=0.5; 
 			    requestAnimFrame(function() {
 				        draw_3_green(lines);
 				});	
