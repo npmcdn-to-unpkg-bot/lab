@@ -184,11 +184,6 @@
 
 
 
-		var line_red = new Line(0, 20, 300, 10 );
-		var slope_red = calculate_slope(line_red.final_x, line_red.final_y, line_red.initial_x, line_red.initial_y);
-		console.log("slope_red: "+slope_red);	
-
-
 
 
 		ctx.strokeStyle = "yellow";
@@ -204,6 +199,31 @@
 		setInterval(function(){
 			// drawGreen();
 		}, 100);
+
+
+
+		function test_red(){
+			var line_red = new Line(0, 20, 300, 10 );
+			var slope_red = calculate_slope(line_red.final_x, line_red.final_y, line_red.initial_x, line_red.initial_y);
+			console.log("slope_red: "+slope_red);	
+
+			ctx.beginPath();
+			ctx.moveTo(line_red.initial_x ,line_red.initial_y);
+			ctx.lineTo(g,y3);
+			ctx.stroke();
+			ctx.closePath();	
+		}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -285,7 +305,7 @@
 
 			}
 			console.log('lines inside for loop: ' + lines);
-			draw_3_green(lines);
+			// draw_3_green(lines);
 
 
 		}
@@ -388,9 +408,9 @@
 
 
 				g3_rev+=0.5;
-			    requestAnimFrame(function() {
-				        draw_3_green(lines);
-				});	
+			 //    requestAnimFrame(function() {
+				//         draw_3_green(lines);
+				// });	
 
 
 		    }
