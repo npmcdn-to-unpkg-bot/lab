@@ -442,37 +442,44 @@
 				//         draw_3_green(lines);
 				// });
 				// requestAnimFrame(function() {
-				    draw_reverse(g3);
+				    draw_reverse(g3, lines);
 				// });	
 				
-				console.log("g3: " + g3);
 		    }
 		}
-
-		function draw_reverse(g3){
+		var g3_red = 180; 
+		function draw_reverse(g3, lines){
 			ctx.clearRect(0, 0, c.width, c.height);
 			var line_red = new Line(0, 20, 300, 10 );
 			var slope_red = calculate_slope(line_red.final_x, line_red.final_y, line_red.initial_x, line_red.initial_y);
-			var y_red = calculate_y_slope(g3, line_red.initial_y, slope_red);
+			var y_red = calculate_y_slope(g3_red, line_red.initial_y, slope_red);
 			console.log("slope_red: "+slope_red);	
 
 
 			ctx.beginPath();
 			ctx.moveTo(line_red.initial_x ,line_red.initial_y);
 			// ctx.lineTo(r,y_red);
-			ctx.lineTo(g3,y_red);
+			ctx.lineTo(g3_red,y_red);
 			ctx.stroke();
 			ctx.closePath();	
 
 			console.log("g3 function: " + g3);
 
-			g3-= 0.5;
+			g3_red-= 0.5;
 			// r-=0.5;
-				requestAnimFrame(function() {
-				    draw_reverse(g3);
-				});	
 
-			
+
+			if (g3_red  == 0) {
+				reverse = false;	
+				g3_red = 180;
+				draw_3_green(lines);
+
+			}
+			else{
+				requestAnimFrame(function() {
+				    draw_reverse(g3, lines);
+				});	
+			}
 		}
 
 
