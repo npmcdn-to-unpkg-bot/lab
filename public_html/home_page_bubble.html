@@ -414,6 +414,7 @@
 			    requestAnimFrame(function() {
 				        draw_3_green(lines);
 				});	
+				console.log("drawing normal");
 
 			    // ctx.clearRect(0, 0, c.width, c.height);
 		    }
@@ -430,7 +431,7 @@
 				// ctx.closePath();	
 
 
-
+				
 
 
 
@@ -453,7 +454,7 @@
 			var line_red = new Line(0, 20, 300, 10 );
 			var slope_red = calculate_slope(line_red.final_x, line_red.final_y, line_red.initial_x, line_red.initial_y);
 			var y_red = calculate_y_slope(g3_red, line_red.initial_y, slope_red);
-			console.log("slope_red: "+slope_red);	
+			// console.log("slope_red: "+slope_red);	
 
 
 			ctx.beginPath();
@@ -463,22 +464,29 @@
 			ctx.stroke();
 			ctx.closePath();	
 
-			console.log("g3 function: " + g3);
+			console.log("g3_red function: " + g3_red);
 
 			g3_red-= 0.5;
 			// r-=0.5;
 
 
-			if (g3_red  == 0) {
+			if (g3_red  <= 0) {
 				reverse = false;	
 				g3_red = 180;
 				draw_3_green(lines);
-
+				g3= 0;
 			}
 			else{
-				requestAnimFrame(function() {
-				    draw_reverse(g3, lines);
-				});	
+				console.log("drawing reverse");
+				// requestAnimFrame(function() {
+				//     draw_reverse(g3, lines);
+				// });	
+				setTimeout(function(){
+					if(reverse == true){
+ 						draw_reverse(g3, lines);
+
+ 					}
+				}, 100);
 			}
 		}
 
