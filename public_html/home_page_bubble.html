@@ -445,11 +445,11 @@
 				    draw_reverse(g3);
 				// });	
 				
-
+				console.log("g3: " + g3);
 		    }
 		}
 
-		var draw_reverse = function(g3){
+		function draw_reverse(g3){
 			ctx.clearRect(0, 0, c.width, c.height);
 			var line_red = new Line(0, 20, 300, 10 );
 			var slope_red = calculate_slope(line_red.final_x, line_red.final_y, line_red.initial_x, line_red.initial_y);
@@ -464,7 +464,9 @@
 			ctx.stroke();
 			ctx.closePath();	
 
+			console.log("g3 function: " + g3);
 
+			g3-= 0.5;
 			// r-=0.5;
 				requestAnimFrame(function() {
 				    draw_reverse(g3);
