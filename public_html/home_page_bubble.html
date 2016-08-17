@@ -333,7 +333,8 @@
 
 			}
 			console.log('lines inside for loop: ' + lines);
-			draw_3_green(lines);
+			draw_reverse();
+			// draw_3_green(lines);
 
 
 		}
@@ -353,7 +354,7 @@
 				var slope_red = calculate_slope(g3, lines[i].initial_y, lines[i].final_x, lines[i].final_y);
 
 
-				console.log("slope of line: " + slope);
+				// console.log("slope of line: " + slope);
 
 				//first param of calculate_y_slope is g3 NOT lines[i].initial_x
 				var y =  calculate_y_slope(g3, lines[i].initial_y, slope);
