@@ -410,48 +410,51 @@
 
 			console.log("reverse: "+ reverse);
 
-			if(reverse == false){
-				g3+=0.5;
+			requestAnimFrame(function() {
+				if(reverse == false){
+					g3+=0.5;
 
 
-				//this line is to display reversed lines 
-				g3_rev-=0.5; 
-			    requestAnimFrame(function() {
-				        draw_3_green(lines);
-				});	
-				console.log("drawing normal");
+					//this line is to display reversed lines 
+					g3_rev-=0.5; 
+				    
+					        draw_3_green(lines);
 
-			    // ctx.clearRect(0, 0, c.width, c.height);
-		    }
-		    else {
-	   //      	ctx.clearRect(0, 0, c.width, c.height);
+					console.log("drawing normal");
 
-	   //      	ctx.strokeStyle = "red";
+				    // ctx.clearRect(0, 0, c.width, c.height);
+			    }
+			    else {
+		   //      	ctx.clearRect(0, 0, c.width, c.height);
 
-				// ctx.beginPath(); 
+		   //      	ctx.strokeStyle = "red";
 
-				// ctx.moveTo(180 ,0);
-				// ctx.lineTo(g3,y_red);
-				// ctx.stroke();
-				// ctx.closePath();	
+					// ctx.beginPath(); 
 
-
-				
+					// ctx.moveTo(180 ,0);
+					// ctx.lineTo(g3,y_red);
+					// ctx.stroke();
+					// ctx.closePath();	
 
 
+					
 
-				g3-=0.5;
 
 
-				g3_rev+=0.5;
-			 //    requestAnimFrame(function() {
-				//         draw_3_green(lines);
-				// });
-				// requestAnimFrame(function() {
-				    draw_reverse(g3, lines);
-				// });	
-				
-		    }
+					g3-=0.5;
+
+
+					g3_rev+=0.5;
+				 //    requestAnimFrame(function() {
+					//         draw_3_green(lines);
+					// });
+					// requestAnimFrame(function() {
+					    draw_reverse(g3, lines);
+					// });	
+					
+			    }
+
+			});	
 		}
 		var g3_red = 180; 
 		function draw_reverse(g3, lines){
