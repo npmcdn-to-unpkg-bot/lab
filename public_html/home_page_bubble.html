@@ -175,12 +175,12 @@
 		// var slope3 = calculate_slope(0, 80, 50, 0);
 		var slope3 = calculate_slope(line3.initial_x, line3.initial_y, line3.final_x, line3.final_y);
 
-		console.log("slope3: "+ slope3);
+		// console.log("slope3: "+ slope3);
 
 
 		//slope3_rev always uses opposite coordinates of slope3 object
 		var slope3_rev = calculate_slope(line3.final_x, line3.final_y, line3.initial_x, line3.initial_y);
-		console.log("slope3_rev: "+ slope3_rev);	
+		// console.log("slope3_rev: "+ slope3_rev);	
 
 
 
@@ -223,7 +223,7 @@
 			var line_red = new Line(0, 20, 300, 10 );
 			var slope_red = calculate_slope(line_red.final_x, line_red.final_y, line_red.initial_x, line_red.initial_y);
 			var y_red = calculate_y_slope(r, line_red.initial_y, slope_red);
-			console.log("slope_red: "+slope_red);	
+			// console.log("slope_red: "+slope_red);	
 
 
 			ctx.beginPath();
@@ -634,7 +634,7 @@
 		// var slope = calculate_slope();
 
 		y = ((-1/2)*x) + constant;
-		console.log("y= " + y);
+		// console.log("y= " + y);
 		return y;
 	}
 
@@ -663,7 +663,7 @@
 		// var slope = calculate_slope();
 
 		y = (slope*x) + constant;
-		console.log("y= " + y);
+		// console.log("y= " + y);
 		return y;
 	}
 
