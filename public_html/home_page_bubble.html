@@ -471,10 +471,13 @@
 
 
 			if (g3_red  <= 0) {
-				// reverse = false;	
+				reverse = false;	
 				// g3_red = 180;
-				// draw_3_green(lines);
-				// g3= 0;
+				console.log("lines inside green: "+ lines);
+				g3= 0;
+				draw_3_green(lines);
+
+				
 			}
 			else{
 				console.log("drawing reverse");
@@ -488,6 +491,10 @@
  					}
 				}, 100);
 			}
+		}
+
+		function draw_straight(){
+			
 		}
 
 
