@@ -353,56 +353,7 @@
 
 			var str = JSON.stringify(lines, null, 4); // (Optional) beautiful indented output.
 			// console.log(lines[0]);
-			for (var i = 0; i < 7; i++) {
-				console.log(lines[i].initial_x);
 
-				var slope = calculate_slope(lines[i].initial_x, lines[i].initial_y, lines[i].final_x, lines[i].final_y);
-
-				var slope_red = calculate_slope(g3, lines[i].initial_y, lines[i].final_x, lines[i].final_y);
-
-
-				// console.log("slope of line: " + slope);
-
-				//first param of calculate_y_slope is g3 NOT lines[i].initial_x
-				var y =  calculate_y_slope(g3, lines[i].initial_y, slope);
- 
-
-				var y_red =  calculate_y_slope(g3,lines[i].final_y, slope);
-				// console.log("y value: " + y);
-
-				if(i%2 == 0 ){
-					// ctx.clearRect(0, 0, c.width, c.height);
-					ctx.beginPath(); 
-
-					ctx.moveTo(lines[i].initial_x ,lines[i].initial_y);
-					ctx.lineTo(g3,y);
-					ctx.stroke();
-					ctx.closePath();	
-				}
-
-
-				else{
-					// ctx.clearRect(0, 0, c.width, c.height);
-				/*REverse drawing*/
-				//to calculate rope we have to take final x coordinate of line  (g_rev)
-					var y3_rev =  calculate_y_slope(g3_rev, lines[i].initial_y, slope);
-					ctx.beginPath();
-					ctx.moveTo(lines[i].final_x ,lines[i].final_y);
-					ctx.lineTo(g3_rev,y3_rev);
-					ctx.stroke();
-					ctx.closePath();		
-				}
-				
-			}
-
-
-			var diff = lines[0].final_x - g3;
-
-			console.log("diff: " + diff);
-
-			console.log("g3: " + g3);
-			console.log("y: " + y);
-			console.log("y_red: " + y_red);
 
 			if (g3  == 180){
 				reverse = true;				
@@ -425,10 +376,64 @@
 
 					console.log("drawing normal");
 
+					for (var i = 0; i < 7; i++) {
+						console.log(lines[i].initial_x);
+
+						var slope = calculate_slope(lines[i].initial_x, lines[i].initial_y, lines[i].final_x, lines[i].final_y);
+
+						var slope_red = calculate_slope(g3, lines[i].initial_y, lines[i].final_x, lines[i].final_y);
+
+
+						// console.log("slope of line: " + slope);
+
+						//first param of calculate_y_slope is g3 NOT lines[i].initial_x
+						var y =  calculate_y_slope(g3, lines[i].initial_y, slope);
+		 
+
+						var y_red =  calculate_y_slope(g3,lines[i].final_y, slope);
+						// console.log("y value: " + y);
+
+						if(i%2 == 0 ){
+							// ctx.clearRect(0, 0, c.width, c.height);
+							ctx.beginPath(); 
+
+							ctx.moveTo(lines[i].initial_x ,lines[i].initial_y);
+							ctx.lineTo(g3,y);
+							ctx.stroke();
+							ctx.closePath();	
+						}
+
+
+						else{
+							// ctx.clearRect(0, 0, c.width, c.height);
+						/*REverse drawing*/
+						//to calculate rope we have to take final x coordinate of line  (g_rev)
+							var y3_rev =  calculate_y_slope(g3_rev, lines[i].initial_y, slope);
+							ctx.beginPath();
+							ctx.moveTo(lines[i].final_x ,lines[i].final_y);
+							ctx.lineTo(g3_rev,y3_rev);
+							ctx.stroke();
+							ctx.closePath();		
+						}
+						
+					}
+
+
+					var diff = lines[0].final_x - g3;
+
+					console.log("diff: " + diff);
+
+					console.log("g3: " + g3);
+					console.log("y: " + y);
+					console.log("y_red: " + y_red);
+
+
+					
+
 				    // ctx.clearRect(0, 0, c.width, c.height);
 			    }
 			    else {
-		   //      	ctx.clearRect(0, 0, c.width, c.height);
+		        	// ctx.clearRect(0, 0, c.width, c.height);
 
 		   //      	ctx.strokeStyle = "red";
 
@@ -452,9 +457,9 @@
 					//         draw_3_green(lines);
 					// });
 					// requestAnimFrame(function() {
-					    test_red(lines);
+					    // test_red(lines);
 					// });	
-					
+					draw_3_green(lines);
 			    }
 
 			});	
