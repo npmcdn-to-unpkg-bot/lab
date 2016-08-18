@@ -218,7 +218,7 @@
 
 
 
-		function test_red(){
+		function test_red(lines){
 			ctx.clearRect(0, 0, c.width, c.height);
 			var line_red = new Line(0, 20, 300, 10 );
 			var slope_red = calculate_slope(line_red.final_x, line_red.final_y, line_red.initial_x, line_red.initial_y);
@@ -238,8 +238,11 @@
 			// if(r>=0){
 				requestAnimFrame(function() {
 					if(r>=10){
-				        test_red();
+				        test_red(lines);
 				      }
+				     else{
+				     	draw_3_green(lines);
+				     }
 				});	
 			// }
 		}
@@ -336,7 +339,7 @@
 
 			}
 			console.log('lines inside for loop: ' + lines);
-			test_red();
+			test_red(lines);
 			// draw_reverse();
 			// draw_3_green(lines);
 
