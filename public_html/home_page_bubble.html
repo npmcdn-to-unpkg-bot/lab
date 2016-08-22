@@ -219,6 +219,7 @@
 
 
 		function test_red(lines){
+			console.log("r: "+ r);
 			ctx.clearRect(0, 0, c.width, c.height);
 			var line_red = new Line(0, 20, 300, 10 );
 			var slope_red = calculate_slope(line_red.final_x, line_red.final_y, line_red.initial_x, line_red.initial_y);
