@@ -350,7 +350,7 @@
 
 
 		function draw_3_green(lines){
-			console.log("lines inside draw3: " );
+			// console.log("lines inside draw3: " );
 
 
 			var str = JSON.stringify(lines, null, 4); // (Optional) beautiful indented output.
@@ -364,7 +364,7 @@
 				reverse = false;	
 			}
 
-			console.log("reverse: "+ reverse);
+			// console.log("reverse: "+ reverse);
 
 			requestAnimFrame(function() {
 				if(reverse == false){
@@ -376,7 +376,7 @@
 				    
 					        draw_3_green(lines);
 
-					console.log("drawing normal");
+					// console.log("drawing normal");
 
 					for (var i = 0; i < 7; i++) {
 						console.log(lines[i].initial_x);
@@ -423,11 +423,11 @@
 
 					var diff = lines[0].final_x - g3;
 
-					console.log("diff: " + diff);
+					// console.log("diff: " + diff);
 
-					console.log("g3: " + g3);
-					console.log("y: " + y);
-					console.log("y_red: " + y_red);
+					// console.log("g3: " + g3);
+					// console.log("y: " + y);
+					// console.log("y_red: " + y_red);
 
 
 					
