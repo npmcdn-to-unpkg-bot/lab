@@ -238,20 +238,56 @@
 
 			// if(r>=0){
 				requestAnimFrame(function() {
-					if(r>=10){
+					if((r>=10) && (reverse == true)){
 						// r =200;
 						// console.log("test_red");
 				        test_red(lines);
+
 				      }
 				     else{
+
 				     	// console.log("draw_3_green");
-				     	draw_3_green(lines);
+				     	test_red_rev(lines);
 				     }
 				});	
 			// }
 		}
 
+		r=0;
+		function test_red_rev(lines){
+			console.log("r: "+ r);
+			ctx.clearRect(0, 0, c.width, c.height);
+			var line_red = new Line(0, 20, 10, 20 );
+			var slope_red = calculate_slope(line_red.initial_x, line_red.initial_y, line_red.final_x, line_red.final_y);
+			var y_red = calculate_y_slope(r, line_red.initial_y, slope_red);
+			// console.log("slope_red: "+slope_red);	
 
+
+			ctx.beginPath();
+			ctx.moveTo(line_red.initial_x ,line_red.initial_y);
+			ctx.lineTo(r,y_red);
+			ctx.stroke();
+			ctx.closePath();	
+
+
+			r+=0.5;
+
+			// if(r>=0){
+				requestAnimFrame(function() {
+					if((r<=200)){
+						// r =200;
+						// console.log("test_red");
+				        test_red_rev(lines);
+
+				      }
+				     else{
+
+				     	// console.log("draw_3_green");
+				     	test_red(lines);
+				     }
+				});	
+			// }
+		}
 
 
 
@@ -333,7 +369,7 @@
 
 			}
 			console.log('lines inside for loop: ' + lines);
-			test_red(lines);
+			test_red_rev(lines);
 			// draw_reverse();
 			// draw_3_green(lines);
 
@@ -342,6 +378,7 @@
 
 
 		function draw_3_green(lines){
+			console.log("reverse: " + reverse);
 			// console.log("lines inside draw3: " );
 
 
@@ -452,7 +489,7 @@
 					// });
 					// requestAnimFrame(function() {
 					// r =0;
-					r = 200
+					r = 200;
 					    test_red(lines);
 
 					// });	
