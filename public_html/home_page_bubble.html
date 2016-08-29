@@ -219,7 +219,7 @@
 
 
 		function test_red(lines){
-			console.log("r: "+ r);
+			console.log("r normal: "+ r);
 			ctx.clearRect(0, 0, c.width, c.height);
 			var line_red = new Line(0, 20, 300, 10 );
 			var slope_red = calculate_slope(line_red.final_x, line_red.final_y, line_red.initial_x, line_red.initial_y);
@@ -255,7 +255,7 @@
 
 		r=0;
 		function test_red_rev(lines){
-			console.log("r: "+ r);
+			console.log("r reverse: "+ r);
 			ctx.clearRect(0, 0, c.width, c.height);
 			var line_red = new Line(0, 20, 10, 20 );
 			var slope_red = calculate_slope(line_red.initial_x, line_red.initial_y, line_red.final_x, line_red.final_y);
@@ -281,7 +281,8 @@
 
 				      }
 				     else{
-
+				     	console.log("test_red(lines)");
+				     	r = 201;
 				     	// console.log("draw_3_green");
 				     	test_red(lines);
 				     }
