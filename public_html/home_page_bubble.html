@@ -320,7 +320,7 @@
 			// }
 		}
 
-		r=0;
+		r=200;
 		function test_blue(){
 			console.log("r reverse: "+ r);
 			ctx.clearRect(0, 0, c.width, c.height);
@@ -328,7 +328,7 @@
 
 			var line_red = new Line(0, 20, 300, 10 );
 			var slope_red = calculate_slope(line_red.initial_x, line_red.initial_y, line_red.final_x, line_red.final_y);	
-			var y3_rev =  calculate_y_slope(g3_rev, line_red.initial_y, slope_red);
+			var y3_rev =  calculate_y_slope(r, line_red.initial_y, slope_red);
 			ctx.beginPath();
 			ctx.moveTo(line_red.final_x ,line_red.final_y);
 			ctx.lineTo(r,y3_rev);
@@ -336,6 +336,11 @@
 			ctx.closePath();		
 
 			r-=0.5;
+
+
+			requestAnimFrame(function() {
+				test_blue();
+			});	
 
 		}
 
