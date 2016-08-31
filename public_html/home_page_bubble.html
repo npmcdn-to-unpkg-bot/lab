@@ -321,6 +321,18 @@
 		}
 
 		function test_blue(){
+			console.log("r reverse: "+ r);
+			ctx.clearRect(0, 0, c.width, c.height);
+
+			
+			var line_red = new Line(0, 20, 300, 10 );
+			var slope_red = calculate_slope(line_red.initial_x, line_red.initial_y, line_red.final_x, line_red.final_y);	
+			var y3_rev =  calculate_y_slope(g3_rev, lines[i].initial_y, slope);
+			ctx.beginPath();
+			ctx.moveTo(lines[i].final_x ,lines[i].final_y);
+			ctx.lineTo(g3_rev,y3_rev);
+			ctx.stroke();
+			ctx.closePath();		
 
 
 		}
