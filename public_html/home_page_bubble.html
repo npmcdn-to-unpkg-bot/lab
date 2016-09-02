@@ -320,7 +320,9 @@
 			// }
 		}
 
-		function test_red_right(){
+
+		var r_rev = 200;
+		function test_red_right(lines){
 			var y3_rev =  calculate_y_slope(g3_rev, lines[i].initial_y, slope);
 			ctx.beginPath();
 			ctx.moveTo(lines[i].final_x ,lines[i].final_y);
