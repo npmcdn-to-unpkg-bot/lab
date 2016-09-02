@@ -323,14 +323,24 @@
 
 		var r_rev = 200;
 		function test_red_right(lines){
-			var y3_rev =  calculate_y_slope(g3_rev, lines[i].initial_y, slope);
+			var line_red = new Line(300, 10, 0, 20);
+
+			var slope_red = calculate_slope(line_red.initial_x, line_red.initial_y, line_red.final_x, line_red.final_y);
+			var y3_rev =  calculate_y_slope(r_rev, lines.initial_y, slope_red);
 			ctx.beginPath();
-			ctx.moveTo(lines[i].final_x ,lines[i].final_y);
-			ctx.lineTo(g3_rev,y3_rev);
+			ctx.moveTo(line_red.initial_x ,line_red.initial_y);
+			ctx.lineTo(r_rev,y3_rev);
 			ctx.stroke();
 			ctx.closePath();	
+			console.log("called");
 
+			r_rev-= 0.5;
 
+			requestAnimFrame(function(){
+
+				test_red_right(lines);
+
+			});
 
 		}
 
@@ -447,7 +457,10 @@
 
 			}
 			console.log('lines inside for loop: ' + lines);
-			test_red_rev(lines);
+			// test_red_rev(lines);
+
+			test_red_right(lines);
+
 			// draw_reverse();
 			// draw_3_green(lines);
 
