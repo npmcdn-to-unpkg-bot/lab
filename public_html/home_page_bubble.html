@@ -321,7 +321,7 @@
 		}
 
 
-		var r_rev = 200;
+		var r_rev = 300;
 		function test_red_right(lines){
 			var line_red = new Line(300, 10, 0, 20);
 
@@ -332,12 +332,14 @@
 			ctx.lineTo(r_rev,y3_rev);
 			ctx.stroke();
 			ctx.closePath();	
-			console.log("called");
+			console.log("x: " + r_rev);
+		 	console.log("y: " + y3_rev);
+
 
 			r_rev-= 0.5;
 
 			requestAnimFrame(function(){
-
+				if(r_rev> 0)
 				test_red_right(lines);
 
 			});
@@ -375,6 +377,7 @@
 
 
 			requestAnimFrame(function() {
+
 				test_blue();
 			});	
 
@@ -795,6 +798,12 @@
 
 		return slope;
 	}
+
+	/*calculate_y_slope function:
+		x: initial x of line 
+
+	
+	*/
 
 	function calculate_y_slope(x, constant, slope){
 		var y=0;
