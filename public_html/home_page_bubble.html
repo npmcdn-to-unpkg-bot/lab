@@ -326,7 +326,7 @@
 			var line_red = new Line(300, 10, 0, 20);
 
 			var slope_red = calculate_slope(line_red.initial_x, line_red.initial_y, line_red.final_x, line_red.final_y);
-			var y3_rev =  calculate_y_slope(r_rev, lines.initial_y, slope_red);
+			var y3_rev =  calculate_y_slope(r_rev, line_red.final_y, slope_red);
 			ctx.beginPath();
 			ctx.moveTo(line_red.initial_x ,line_red.initial_y);
 			ctx.lineTo(r_rev,y3_rev);
