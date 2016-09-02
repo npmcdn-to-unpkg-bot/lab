@@ -320,6 +320,30 @@
 			// }
 		}
 
+		function test_red_right(){
+			var y3_rev =  calculate_y_slope(g3_rev, lines[i].initial_y, slope);
+			ctx.beginPath();
+			ctx.moveTo(lines[i].final_x ,lines[i].final_y);
+			ctx.lineTo(g3_rev,y3_rev);
+			ctx.stroke();
+			ctx.closePath();	
+
+
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
 		r=200;
 		function test_blue(){
 			console.log("r reverse: "+ r);
@@ -343,7 +367,6 @@
 			});	
 
 		}
-
 
 
 
