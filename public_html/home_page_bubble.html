@@ -438,6 +438,12 @@
 
 			ctx.clearRect(0, 0, c.width, c.height);
 
+
+		requestAnimFrame(function(){
+
+			draw_test(lines);
+
+			
 			for (var i = 0; i < 7; i++) {
 				if(i%2 == 0 ){
 					console.log("drawing");
@@ -460,19 +466,21 @@
 			
 
 
-			requestAnimFrame(function(){
+
 				if(xdraw <= 300){
+					console.log("normal");
 					xdraw+=0.5;
-					draw_test(lines);
+					
 				}
 				else {
+					console.log("reverse");
 					xdraw-=0.5;
 				}
 				
 				
 
 
-			});
+			});//end request anim
 		}
 
 
