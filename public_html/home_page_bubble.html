@@ -337,6 +337,20 @@
 		 	console.log("y: " + y3_rev);
 
 
+			var line_red = new Line(300, 120, 0, 130);
+
+			var slope_red = calculate_slope(line_red.initial_x, line_red.initial_y, line_red.final_x, line_red.final_y);
+			var y3_rev =  calculate_y_slope(r_rev, line_red.final_y, slope_red);
+			ctx.beginPath();
+			ctx.moveTo(line_red.initial_x ,line_red.initial_y);
+			ctx.lineTo(r_rev,y3_rev);
+			ctx.stroke();
+			ctx.closePath();	
+			console.log("x: " + r_rev);
+		 	console.log("y: " + y3_rev);
+
+
+
 			r_rev-= 0.5;
 
 			requestAnimFrame(function(){
@@ -508,7 +522,8 @@
 			console.log('lines inside for loop: ' + lines);
 			// test_red_rev(lines);
 
-			test_red_right(lines);
+			// test_red(lines);
+			test_red_rev(lines);
 
 			// draw_reverse();
 			// draw_3_green(lines);
@@ -638,121 +653,10 @@
 
 			});	
 		}
-		var g3_red = 180; 
-		function draw_reverse(g3, lines){
-			ctx.clearRect(0, 0, c.width, c.height);
-			var line_red = new Line(0, 20, 300, 10 );
-			var slope_red = calculate_slope(line_red.final_x, line_red.final_y, line_red.initial_x, line_red.initial_y);
-			var y_red = calculate_y_slope(g3_red, line_red.final_y, slope_red);
-			// console.log("slope_red: "+slope_red);	
-
-
-			ctx.beginPath();
-			ctx.moveTo(line_red.initial_x ,line_red.initial_y);
-			// ctx.lineTo(r,y_red);
-			ctx.lineTo(g3_red,y_red);
-			ctx.stroke();
-			ctx.closePath();	
-
-			console.log("g3_red function: " + g3_red);
-
-			g3_red-= 0.5;
-			// r-=0.5;
-
-
-			if (g3_red  <= 0) {
-				reverse = false;	
-				// g3_red = 180;
-				console.log("lines inside green: "+ lines);
-				g3= 0;
-				draw_3_green(lines);
-
-				
-			}
-			else{
-				console.log("drawing reverse");
-				// requestAnimFrame(function() {
-				//     draw_reverse(g3, lines);
-				// });	
-				setTimeout(function(){
-					if(reverse == true){
- 						draw_reverse(g3, lines);
-
- 					}
-				}, 100);
-			}
-		}
-
-
-
-
-
-
 
 		// if(line1.){
 
 		// }
-		var draw3 = function(){
-
-			console.log("drawing " + ctx);
-			o++;
-			// ctx.strokeStyle = 'red';
-			
-			// ctx.beginPath();
-			// ctx.moveTo(0,100);
-			// ctx.lineTo(100,100);
-			// ctx.stroke();
-			// ctx.closePath();
-
-			var rand_y =Math.floor((Math.random() * 100) + 1);
-			z-=0.5;
-			t+=0.5;
-
-			console.log("line constant: "+  line1.constant);
-
-			var y = calculate_y2(z, line2.constant);
-			console.log("z = " + z);
-			var y2 = calculate_y(t, line1.constant);
-			console.log("t = " + t);
-
-
-			
-			// ctx.fillRect(x,50,1,1); // fill in the pixel at (10,10)
-			if((z>0) || (t<200)){
-
-				/*clear everything before first*/
-		        ctx.clearRect(0, 0, c.width, c.height);
-
-		        /*blue line movement*/
-		        ctx.strokeStyle = "blue";
-		        ctx.beginPath();
-		        /*initial blue line position (x,y)*/
-		        ctx.moveTo(line2.initial_x,line2.initial_y);
-
-		        ctx.lineTo(z,y);
-				// ctx.closePath();
-				ctx.stroke();
-				ctx.closePath();
-
-
-		        /*yellow line movement*/
-				ctx.strokeStyle = "yellow";
-		        ctx.beginPath();
-		        ctx.moveTo(line1.initial_x ,line1.initial_y);
-		        ctx.lineTo(t,y2);
-				// ctx.closePath();
-				ctx.stroke();
-				ctx.closePath();
-
-		        requestAnimFrame(function() {
-			        draw3();
-			    });	
-			}	
-			else{
-
-			}
-			console.log("o = "+ o);
-		}
 
 		// initLines();
 
