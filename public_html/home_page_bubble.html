@@ -433,6 +433,7 @@
 		}
 
 		var xdraw = 0;
+		var dummy =1;
 		var xdraw_rev = 300;
 		function draw_test(lines){
 
@@ -467,14 +468,20 @@
 
 
 
-				if(xdraw <= 300){
+				if(dummy == 1){
 					console.log("normal");
 					xdraw+=0.5;
-					
+
+					if(xdraw == 300)
+					dummy = 0;
 				}
-				else {
+				if(dummy == 0) {
 					console.log("reverse");
 					xdraw-=0.5;
+
+					if(xdraw == 10)
+					dummy = 1;
+
 				}
 				
 				
