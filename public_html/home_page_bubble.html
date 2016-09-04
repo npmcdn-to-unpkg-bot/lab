@@ -423,37 +423,56 @@
 			// test_red_rev(lines);
 
 			// test_red(lines);
-			test_red_rev(lines);
-
+			// test_red_rev(lines);
+					
+			draw_test(lines);
 			// draw_reverse();
 			// draw_3_green(lines);
 
 
 		}
+
+		var xdraw = 0;
+		var xdraw_rev = 300;
 		function draw_test(lines){
+
 			ctx.clearRect(0, 0, c.width, c.height);
 
 			for (var i = 0; i < 7; i++) {
+				if(i%2 == 0 ){
+					console.log("drawing");
+				var slope = calculate_slope(lines[i].final_x, lines[i].final_y, lines[i].initial_x, lines[i].initial_y);
 
-
-			}
-
-
-
-			lines[i]
-			var slope_red = calculate_slope(line_red.final_x, line_red.final_y, line_red.initial_x, line_red.initial_y);
-
-
-			var y_red = calculate_y_slope(r, line_red.initial_y, slope_red);
+				var y =  calculate_y_slope(xdraw, lines[i].initial_y, slope);
 
 
 
+					ctx.beginPath(); 
 
-			requestAnimFrame(function() {
-
-
+					ctx.moveTo(lines[i].initial_x ,lines[i].initial_y);
+					ctx.lineTo(xdraw,y);
+					ctx.stroke();
+					ctx.closePath();	
+				}
 
 			}
+
+			
+
+
+			requestAnimFrame(function(){
+				if(xdraw <= 300){
+					xdraw+=0.5;
+					draw_test(lines);
+				}
+				else {
+					xdraw-=0.5;
+				}
+				
+				
+
+
+			});
 		}
 
 
@@ -623,28 +642,7 @@
 	}
 
 
-	function initLines(){
 
-		console.log('intiLines');
-		var line1 = new Line(50, 100, 200,100, 50, 'up');
-
-
-		ctx.strokeStyle = "red";
-		// a line has to be drawn according to its y 
-		// because the y line is greater than the x line 
-		// so its maximum value is greater too 
-		// it's necessary then to find the x value 
-		// corresponding to the final y (maximum)
-
-		ctx.beginPath();
-		ctx.moveTo(line1.initial_x ,line1.initial_y);
-		
-		line1.final_y=  calculate_y(line1.final_x, line1.slope);
-		ctx.lineTo(line1.final_x,line1.final_y);
-
-		ctx.stroke();
-		ctx.closePath();		
-	}
 
 
 	function calculate_y(x, constant){
