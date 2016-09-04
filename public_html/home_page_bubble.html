@@ -324,7 +324,7 @@
 		var r_rev = 300;
 		function test_red_right(lines){
 			ctx.clearRect(0, 0, c.width, c.height);
-			var line_red = new Line(300, 10, 0, 20);
+			var line_red = new Line(300, 100, 0, 110);
 
 			var slope_red = calculate_slope(line_red.initial_x, line_red.initial_y, line_red.final_x, line_red.final_y);
 			var y3_rev =  calculate_y_slope(r_rev, line_red.final_y, slope_red);
@@ -355,7 +355,7 @@
 		var r = 0;
 		function test_red_left(lines){
 			ctx.clearRect(0, 0, c.width, c.height);
-			var line_red = new Line(300, 10, 0, 20);
+			var line_red = new Line(300, 100, 0, 110);
 
 			var slope_red = calculate_slope(line_red.initial_x, line_red.initial_y, line_red.final_x, line_red.final_y);
 			var y3_rev =  calculate_y_slope(r, line_red.final_y, slope_red);
@@ -364,6 +364,20 @@
 			ctx.lineTo(r,y3_rev);
 			ctx.stroke();
 			ctx.closePath();	
+
+			var line_red = new Line(300, 120, 0, 130);
+
+			var slope_red = calculate_slope(line_red.initial_x, line_red.initial_y, line_red.final_x, line_red.final_y);
+			var y3_rev =  calculate_y_slope(r, line_red.final_y, slope_red);
+			ctx.beginPath();
+			ctx.moveTo(line_red.initial_x ,line_red.initial_y);
+			ctx.lineTo(r,y3_rev);
+			ctx.stroke();
+			ctx.closePath();	
+
+
+
+
 			console.log("x: " + r);
 		 	console.log("y: " + y3_rev);
 
