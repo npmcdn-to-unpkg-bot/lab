@@ -201,22 +201,7 @@
 		}, 100);
 
 
-
-
-
-
 		var r = 200;
-
-		// test_red();
-
-
-
-		// setInterval(function(){
-		// 	test_red();
-		// }, 100);
-
-
-
 
 		function test_red(lines){
 			console.log("r normal: "+ r);
@@ -412,83 +397,6 @@
 
 
 
-
-
-
-
-
-
-		r=200;
-		function test_blue(){
-			console.log("r reverse: "+ r);
-			ctx.clearRect(0, 0, c.width, c.height);
-
-
-			var line_red = new Line(0, 20, 300, 10 );
-			var slope_red = calculate_slope(line_red.initial_x, line_red.initial_y, line_red.final_x, line_red.final_y);	
-			var y3_rev =  calculate_y_slope(r, line_red.initial_y, slope_red);
-			ctx.beginPath();
-			ctx.moveTo(line_red.final_x ,line_red.final_y);
-			ctx.lineTo(r,y3_rev);
-			ctx.stroke();
-			ctx.closePath();		
-
-			r-=0.5;
-
-
-			requestAnimFrame(function() {
-
-				test_blue();
-			});	
-
-		}
-
-
-
-
-
-
-
-
-
-
-		//g value is initial x coordinate of line (line3 in this case)
-		var g = line3.initial_x;
-		var g_rev = line3.final_x;
-
-		var drawGreen = function(){
-
-			/*constant is the value if y where it starts (initial_y)*/
-			// var y3 =  calculate_y_slope(g, line3.initial_y, slope3);
-			// ctx.beginPath();
-			// ctx.moveTo(line3.initial_x ,line3.initial_y);
-			// ctx.lineTo(g,y3);
-			// ctx.stroke();
-			// ctx.closePath();		
-
-			// g+=0.5;
-
-
-
-
-
-			/*REverse drawing*/
-			//to calculate rope we have to take final x coordinate of line  (g_rev)
-			var y3_rev =  calculate_y_slope(g_rev, line3.initial_y, slope3_rev);
-			ctx.beginPath();
-			ctx.moveTo(line3.final_x ,line3.final_y);
-			ctx.lineTo(g_rev,y3_rev);
-			ctx.stroke();
-			ctx.closePath();		
-
-			g_rev-=0.5;
-
-
-
-	
-		}
-
-
 		
 		
 		function initLines(){
@@ -504,20 +412,12 @@
 				// lines.push(theline);
 
 				lines[i] = theline;
-
-
-
 				/********Drawing the lines*********/
 				// ctx.beginPath();
 				// ctx.moveTo(lines[i].initial_x ,lines[i].initial_y);
 				// ctx.lineTo(lines[i].final_x ,lines[i].final_y);
 				// ctx.stroke();
 				// ctx.closePath();	
-
-
-
-
-
 			}
 			console.log('lines inside for loop: ' + lines);
 			// test_red_rev(lines);
@@ -530,6 +430,33 @@
 
 
 		}
+		function draw_test(lines){
+			ctx.clearRect(0, 0, c.width, c.height);
+
+			for (var i = 0; i < 7; i++) {
+
+
+			}
+
+
+
+			lines[i]
+			var slope_red = calculate_slope(line_red.final_x, line_red.final_y, line_red.initial_x, line_red.initial_y);
+
+
+			var y_red = calculate_y_slope(r, line_red.initial_y, slope_red);
+
+
+
+
+			requestAnimFrame(function() {
+
+
+
+			}
+		}
+
+
 
 
 		function draw_3_green(lines){
