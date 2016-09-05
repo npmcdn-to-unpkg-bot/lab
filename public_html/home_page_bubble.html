@@ -462,9 +462,9 @@
 					ctx.closePath();	
 				}
 				else{
-					var slope = calculate_slope(lines[i].final_x, lines[i].final_y, lines[i].initial_x, lines[i].initial_y);
+					var slope = calculate_slope(lines[i].initial_x, lines[i].initial_y, lines[i].final_x, lines[i].final_y);
 
-					var y =  calculate_y_slope(xdraw, lines[i].initial_y, slope);
+					var y =  calculate_y_slope(xdraw_rev, lines[i].initial_y, slope);
 
 
 
